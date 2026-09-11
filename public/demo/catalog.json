@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "companies": [
+    {
+      "id": "samsung",
+      "name": "삼성전자",
+      "stockCode": "005930",
+      "comparisons": [
+        {
+          "id": "samsung-2024-2025-demo",
+          "years": [
+            2024,
+            2025
+          ],
+          "path": "demo/samsung-2024-2025-demo.json",
+          "mode": "demo"
+        }
+      ]
+    },
+    {
+      "id": "skhynix",
+      "name": "SK하이닉스",
+      "stockCode": "000660",
+      "comparisons": [
+        {
+          "id": "skhynix-2024-2025-demo",
+          "years": [
+            2024,
+            2025
+          ],
+          "path": "demo/skhynix-2024-2025-demo.json",
+          "mode": "demo"
+        }
+      ]
+    },
+    {
+      "id": "lge",
+      "name": "LG전자",
+      "stockCode": "066570",
+      "comparisons": [
+        {
+          "id": "lge-2024-2025-demo",
+          "years": [
+            2024,
+            2025
+          ],
+          "path": "demo/lge-2024-2025-demo.json",
+          "mode": "demo"
+        }
+      ]
+    }
+  ]
+}
