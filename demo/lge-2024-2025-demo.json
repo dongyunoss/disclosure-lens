@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "id": "lge-2024-2025-demo",
+  "companyId": "lge",
+  "companyName": "LG전자",
+  "stockCode": "066570",
+  "mode": "demo",
+  "version": "demo-v1",
+  "checkedAt": null,
+  "reports": [
+    {
+      "id": "demo-lge-2024",
+      "companyId": "lge",
+      "year": 2024,
+      "receipt": null,
+      "filedAt": null,
+      "corrected": false,
+      "checkedAt": null,
+      "sha256": "DEMO-NOT-A-FILING",
+      "dartUrl": null
+    },
+    {
+      "id": "demo-lge-2025",
+      "companyId": "lge",
+      "year": 2025,
+      "receipt": null,
+      "filedAt": null,
+      "corrected": false,
+      "checkedAt": null,
+      "sha256": "DEMO-NOT-A-FILING",
+      "dartUrl": null
+    }
+  ],
+  "financials": [
+    {
+      "id": "financial-0",
+      "label": "매출",
+      "before": "30000000000000",
+      "after": "35400000000000",
+      "delta": "5400000000000",
+      "percent": "18.00",
+      "status": "증가",
+      "reason": null,
+      "beforeBlockId": "demo-lge-2024-finance-0",
+      "afterBlockId": "demo-lge-2025-finance-0",
+      "currency": "KRW",
+      "basis": "CFS",
+      "beforeRow": 0,
+      "afterRow": 0
+    },
+    {
+      "id": "financial-1",
+      "label": "영업이익",
+      "before": "1000000000000",
+      "after": "1260000000000",
+      "delta": "260000000000",
+      "percent": "26.00",
+      "status": "증가",
+      "reason": null,
+      "beforeBlockId": "demo-lge-2024-finance-1",
+      "afterBlockId": "demo-lge-2025-finance-1",
+      "currency": "KRW",
+      "basis": "CFS",
+      "beforeRow": 0,
+      "afterRow": 0
+    }
+  ],
+  "changes": [
+    {
+      "id": "change-1",
+      "kind": "content",
+      "section": "사업 개요",
+      "title": "제품 설명의 범위 확대",
+      "explanation": "제품 소개 문장에 기업용 제품이 함께 기재되었습니다. 실제 사업 개시 여부는 이 예시로 판단할 수 없습니다.",
+      "before": [
+        {
+          "blockId": "demo-lge-2024-0",
+          "quote": "당사는 소비자용 전자 제품을 공급하고 있습니다."
+        }
+      ],
+      "after": [
+        {
+          "blockId": "demo-lge-2025-0",
+          "quote": "당사는 소비자용 전자 제품과 기업용 솔루션을 공급하고 있습니다."
+        }
+      ],
+      "reviewStatus": "needs_review"
+    },
+    {
+      "id": "change-2",
+      "kind": "added",
+      "section": "주요 제품·서비스",
+      "title": "서비스 설명 문단 추가",
+      "explanation": "이후 문서의 주요 제품·서비스 절에 유지보수 서비스 설명이 추가되었습니다.",
+      "before": [],
+      "after": [
+        {
+          "blockId": "demo-lge-2025-1",
+          "quote": "제품 공급과 함께 정기 점검 및 유지보수 서비스를 설명하고 있습니다."
+        }
+      ],
+      "reviewStatus": "needs_review"
+    },
+    {
+      "id": "change-3",
+      "kind": "removed",
+      "section": "주요 제품·서비스",
+      "title": "유통 경로 설명 삭제",
+      "explanation": "이전 문서에 있던 유통 경로 문장이 이후 문서의 분석 대상 절에서 확인되지 않습니다.",
+      "before": [
+        {
+          "blockId": "demo-lge-2024-2",
+          "quote": "제품은 지역별 유통 협력사를 통해 공급됩니다."
+        }
+      ],
+      "after": [],
+      "reviewStatus": "needs_review"
+    },
+    {
+      "id": "change-4",
+      "kind": "content",
+      "section": "사업 개요",
+      "title": "연구개발 설명 변경",
+      "explanation": "연구개발 대상으로 기재된 문구에 사용 편의성이 추가되었습니다.",
+      "before": [
+        {
+          "blockId": "demo-lge-2024-3",
+          "quote": "연구개발은 제품 성능 개선에 집중하고 있습니다."
+        }
+      ],
+      "after": [
+        {
+          "blockId": "demo-lge-2025-3",
+          "quote": "연구개발은 제품 성능과 사용 편의성 개선에 집중하고 있습니다."
+        }
+      ],
+      "reviewStatus": "needs_review"
+    },
+    {
+      "id": "change-5",
+      "kind": "wording",
+      "section": "사업 개요",
+      "title": "공급 지역 표현 정리",
+      "explanation": "동일한 공급 지역을 다르게 표현한 예시입니다.",
+      "before": [
+        {
+          "blockId": "demo-lge-2024-4",
+          "quote": "제품을 국내 및 해외 시장에 공급합니다."
+        }
+      ],
+      "after": [
+        {
+          "blockId": "demo-lge-2025-4",
+          "quote": "제품을 국내외 시장에 공급합니다."
+        }
+      ],
+      "reviewStatus": "needs_review"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "demo-lge-2024-0",
+      "reportId": "demo-lge-2024",
+      "kind": "paragraph",
+      "section": "II. 사업의 내용 > 사업 개요",
+      "order": 0,
+      "text": "당사는 소비자용 전자 제품을 공급하고 있습니다.",
+      "normalized": "당사는 소비자용 전자 제품을 공급하고 있습니다.",
+      "contextBefore": "[가상 예시] 이 문단은 화면 기능을 설명하기 위해 작성되었습니다.",
+      "contextAfter": "표시된 내용은 실제 기업의 공시나 사업 현황을 나타내지 않습니다."
+    },
+    {
+      "id": "demo-lge-2025-0",
+      "reportId": "demo-lge-2025",
+      "kind": "paragraph",
+      "section": "II. 사업의 내용 > 사업 개요",
+      "order": 1,
+      "text": "당사는 소비자용 전자 제품과 기업용 솔루션을 공급하고 있습니다.",
+      "normalized": "당사는 소비자용 전자 제품과 기업용 솔루션을 공급하고 있습니다.",
+      "contextBefore": "[가상 예시] 이 문단은 화면 기능을 설명하기 위해 작성되었습니다.",
+      "contextAfter": "표시된 내용은 실제 기업의 공시나 사업 현황을 나타내지 않습니다."
+    },
+    {
+      "id": "demo-lge-2025-1",
+      "reportId": "demo-lge-2025",
+      "kind": "paragraph",
+      "section": "II. 사업의 내용 > 주요 제품·서비스",
+      "order": 2,
+      "text": "제품 공급과 함께 정기 점검 및 유지보수 서비스를 설명하고 있습니다.",
+      "normalized": "제품 공급과 함께 정기 점검 및 유지보수 서비스를 설명하고 있습니다.",
+      "contextBefore": "[가상 예시] 이 문단은 화면 기능을 설명하기 위해 작성되었습니다.",
+      "contextAfter": "표시된 내용은 실제 기업의 공시나 사업 현황을 나타내지 않습니다."
+    },
+    {
+      "id": "demo-lge-2024-2",
+      "reportId": "demo-lge-2024",
+      "kind": "paragraph",
+      "section": "II. 사업의 내용 > 주요 제품·서비스",
+      "order": 3,
+      "text": "제품은 지역별 유통 협력사를 통해 공급됩니다.",
+      "normalized": "제품은 지역별 유통 협력사를 통해 공급됩니다.",
+      "contextBefore": "[가상 예시] 이 문단은 화면 기능을 설명하기 위해 작성되었습니다.",
+      "contextAfter": "표시된 내용은 실제 기업의 공시나 사업 현황을 나타내지 않습니다."
+    },
+    {
+      "id": "demo-lge-2024-3",
+      "reportId": "demo-lge-2024",
+      "kind": "paragraph",
+      "section": "II. 사업의 내용 > 사업 개요",
+      "order": 4,
+      "text": "연구개발은 제품 성능 개선에 집중하고 있습니다.",
+      "normalized": "연구개발은 제품 성능 개선에 집중하고 있습니다.",
+      "contextBefore": "[가상 예시] 이 문단은 화면 기능을 설명하기 위해 작성되었습니다.",
+      "contextAfter": "표시된 내용은 실제 기업의 공시나 사업 현황을 나타내지 않습니다."
+    },
+    {
+      "id": "demo-lge-2025-3",
+      "reportId": "demo-lge-2025",
+      "kind": "paragraph",
+      "section": "II. 사업의 내용 > 사업 개요",
+      "order": 5,
+      "text": "연구개발은 제품 성능과 사용 편의성 개선에 집중하고 있습니다.",
+      "normalized": "연구개발은 제품 성능과 사용 편의성 개선에 집중하고 있습니다.",
+      "contextBefore": "[가상 예시] 이 문단은 화면 기능을 설명하기 위해 작성되었습니다.",
+      "contextAfter": "표시된 내용은 실제 기업의 공시나 사업 현황을 나타내지 않습니다."
+    },
+    {
+      "id": "demo-lge-2024-4",
+      "reportId": "demo-lge-2024",
+      "kind": "paragraph",
+      "section": "II. 사업의 내용 > 사업 개요",
+      "order": 6,
+      "text": "제품을 국내 및 해외 시장에 공급합니다.",
+      "normalized": "제품을 국내 및 해외 시장에 공급합니다.",
+      "contextBefore": "[가상 예시] 이 문단은 화면 기능을 설명하기 위해 작성되었습니다.",
+      "contextAfter": "표시된 내용은 실제 기업의 공시나 사업 현황을 나타내지 않습니다."
+    },
+    {
+      "id": "demo-lge-2025-4",
+      "reportId": "demo-lge-2025",
+      "kind": "paragraph",
+      "section": "II. 사업의 내용 > 사업 개요",
+      "order": 7,
+      "text": "제품을 국내외 시장에 공급합니다.",
+      "normalized": "제품을 국내외 시장에 공급합니다.",
+      "contextBefore": "[가상 예시] 이 문단은 화면 기능을 설명하기 위해 작성되었습니다.",
+      "contextAfter": "표시된 내용은 실제 기업의 공시나 사업 현황을 나타내지 않습니다."
+    },
+    {
+      "id": "demo-lge-2024-finance-0",
+      "reportId": "demo-lge-2024",
+      "kind": "table",
+      "section": "III. 재무에 관한 사항 > 연결손익계산서",
+      "order": 8,
+      "text": "매출 | 30,000,000,000,000",
+      "normalized": "매출 | 30,000,000,000,000",
+      "contextBefore": "[가상 예시] 이 문단은 화면 기능을 설명하기 위해 작성되었습니다.",
+      "contextAfter": "표시된 내용은 실제 기업의 공시나 사업 현황을 나타내지 않습니다.",
+      "headers": [
+        "계정",
+        "당기금액 (원)"
+      ],
+      "rows": [
+        [
+          "매출",
+          "30,000,000,000,000"
+        ]
+      ],
+      "unit": "가상 예시 · 단위: 원 · 연결 기준"
+    },
+    {
+      "id": "demo-lge-2025-finance-0",
+      "reportId": "demo-lge-2025",
+      "kind": "table",
+      "section": "III. 재무에 관한 사항 > 연결손익계산서",
+      "order": 9,
+      "text": "매출 | 35,400,000,000,000",
+      "normalized": "매출 | 35,400,000,000,000",
+      "contextBefore": "[가상 예시] 이 문단은 화면 기능을 설명하기 위해 작성되었습니다.",
+      "contextAfter": "표시된 내용은 실제 기업의 공시나 사업 현황을 나타내지 않습니다.",
+      "headers": [
+        "계정",
+        "당기금액 (원)"
+      ],
+      "rows": [
+        [
+          "매출",
+          "35,400,000,000,000"
+        ]
+      ],
+      "unit": "가상 예시 · 단위: 원 · 연결 기준"
+    },
+    {
+      "id": "demo-lge-2024-finance-1",
+      "reportId": "demo-lge-2024",
+      "kind": "table",
+      "section": "III. 재무에 관한 사항 > 연결손익계산서",
+      "order": 10,
+      "text": "영업이익 | 1,000,000,000,000",
+      "normalized": "영업이익 | 1,000,000,000,000",
+      "contextBefore": "[가상 예시] 이 문단은 화면 기능을 설명하기 위해 작성되었습니다.",
+      "contextAfter": "표시된 내용은 실제 기업의 공시나 사업 현황을 나타내지 않습니다.",
+      "headers": [
+        "계정",
+        "당기금액 (원)"
+      ],
+      "rows": [
+        [
+          "영업이익",
+          "1,000,000,000,000"
+        ]
+      ],
+      "unit": "가상 예시 · 단위: 원 · 연결 기준"
+    },
+    {
+      "id": "demo-lge-2025-finance-1",
+      "reportId": "demo-lge-2025",
+      "kind": "table",
+      "section": "III. 재무에 관한 사항 > 연결손익계산서",
+      "order": 11,
+      "text": "영업이익 | 1,260,000,000,000",
+      "normalized": "영업이익 | 1,260,000,000,000",
+      "contextBefore": "[가상 예시] 이 문단은 화면 기능을 설명하기 위해 작성되었습니다.",
+      "contextAfter": "표시된 내용은 실제 기업의 공시나 사업 현황을 나타내지 않습니다.",
+      "headers": [
+        "계정",
+        "당기금액 (원)"
+      ],
+      "rows": [
+        [
+          "영업이익",
+          "1,260,000,000,000"
+        ]
+      ],
+      "unit": "가상 예시 · 단위: 원 · 연결 기준"
+    }
+  ],
+  "analysis": {
+    "model": "none-fictional-fixture",
+    "promptVersion": "demo-v1"
+  },
+  "coverage": [
+    "연결 매출",
+    "연결 영업이익",
+    "사업 개요",
+    "주요 제품·서비스"
+  ]
+}
