@@ -17,6 +17,8 @@ import type { Catalog, Change, Comparison, EvidenceBlock, Kind } from "./types";
 import { decodeSelection, selectionHash, signedEok, wonToEok } from "./format";
 import { useEvidenceTools } from "./webmcp";
 import { checkCatalog, checkComparison } from "./data";
+import ExcerptLibrary from "./ExcerptLibrary";
+import "./excerpts.css";
 
 const kinds: Record<Kind, string> = {
   content: "내용 변경",
@@ -107,6 +109,28 @@ function Evidence({
   );
 }
 export default function App() {
+  const [excerptCompany, setExcerptCompany] = useState(
+    new URLSearchParams(location.search).get("source")?.split("-")[0] ||
+      "samsung",
+  );
+  const [excerptMode, setExcerptMode] = useState(
+    new URLSearchParams(location.search).get("view") === "excerpts",
+  );
+  function navigateView(view: "compare" | "excerpts" | "help") {
+    setExcerptMode(view === "excerpts");
+    setHelp(view === "help");
+    const u = new URL(location.href);
+    u.searchParams.delete("source");
+    u.searchParams.delete("excerpt");
+    if (view === "excerpts") {
+      u.searchParams.set("view", "excerpts");
+      u.searchParams.delete("demo");
+      u.hash = "";
+      setDemo(false);
+      setSelection(decodeSelection(""));
+    } else u.searchParams.delete("view");
+    history.replaceState(null, "", u);
+  }
   const [catalog, setCatalog] = useState<Catalog | null>(null),
     [data, setData] = useState<Comparison | null>(null),
     [error, setError] = useState("");
@@ -215,19 +239,26 @@ export default function App() {
         </a>
         <div className="side-caption">DISCLOSURE RESEARCH</div>
         <button
-          className={"nav-item " + (!help ? "active" : "")}
-          onClick={() => setHelp(false)}
+          className={"nav-item " + (!help && !excerptMode ? "active" : "")}
+          onClick={() => navigateView("compare")}
         >
           <Search size={18} />
           공시 비교
           <ArrowRight size={15} />
         </button>
         <button
-          className={"nav-item " + (help ? "active" : "")}
-          onClick={() => setHelp(true)}
+          className={"nav-item " + (help && !excerptMode ? "active" : "")}
+          onClick={() => navigateView("help")}
         >
           <BookOpen size={18} />
           분석 기준 안내
+        </button>
+        <button
+          className={"nav-item " + (excerptMode ? "active" : "")}
+          onClick={() => navigateView("excerpts")}
+        >
+          <FileText size={18} />
+          원문 발췌
         </button>
         <div className="side-label">
           분석 대상 기업 <span>03</span>
@@ -235,7 +266,12 @@ export default function App() {
         {catalog?.companies.map((c) => (
           <button
             key={c.id}
-            className={"company " + (company?.id === c.id ? "selected" : "")}
+            className={
+              "company " +
+              ((excerptMode ? excerptCompany : company?.id) === c.id
+                ? "selected"
+                : "")
+            }
             onClick={() => {
               choose(c.id, c.comparisons[0]?.id);
               setHelp(false);
@@ -248,7 +284,9 @@ export default function App() {
               {c.name}
               <small>{c.stockCode} · KOSPI</small>
             </span>
-            {company?.id === c.id && <span className="selected-line" />}
+            {(excerptMode ? excerptCompany : company?.id) === c.id && (
+              <span className="selected-line" />
+            )}
           </button>
         ))}
         <div className="sidebar-bottom">
@@ -265,7 +303,13 @@ export default function App() {
         <header className="topbar">
           <span>
             리서치 워크스페이스 <span className="slash">/</span>{" "}
-            <strong>{help ? "분석 기준" : "사업보고서 비교"}</strong>
+            <strong>
+              {excerptMode
+                ? "원문 발췌"
+                : help
+                  ? "분석 기준"
+                  : "사업보고서 비교"}
+            </strong>
           </span>
           <span className="top-note">
             <Layers3 size={15} />
@@ -275,42 +319,67 @@ export default function App() {
         <main>
           <div className="page-heading">
             <div>
-              <div className="eyebrow">ANNUAL REPORT COMPARISON</div>
-              <h1>{help ? "분석 기준 안내" : "무엇이 달라졌을까요?"}</h1>
-              <p>두 사업보고서의 변화와 그 근거를 함께 읽어보세요.</p>
+              <div className="eyebrow">
+                {excerptMode
+                  ? "OFFICIAL FILING EXCERPTS"
+                  : "ANNUAL REPORT COMPARISON"}
+              </div>
+              <h1>
+                {excerptMode
+                  ? "실제 공시에서 근거를 발췌하세요"
+                  : help
+                    ? "분석 기준 안내"
+                    : "무엇이 달라졌을까요?"}
+              </h1>
+              <p>
+                {excerptMode
+                  ? "사업 설명과 재무표를 선택하고, 출처와 함께 복사하세요."
+                  : "두 사업보고서의 변화와 그 근거를 함께 읽어보세요."}
+              </p>
             </div>
             <button className="button secondary" onClick={share}>
               {copied ? <Check size={16} /> : <Link2 size={16} />}{" "}
-              {copied ? "주소를 복사했어요" : "비교 링크 복사"}
+              {copied
+                ? "주소를 복사했어요"
+                : excerptMode
+                  ? "발췌 링크 복사"
+                  : "비교 링크 복사"}
             </button>
           </div>
-          <div className={"notice " + (demo ? "demo" : "")} role="status">
-            <Info size={18} />
-            <span>
-              {demo ? (
-                <>
-                  <strong>기능 미리보기</strong> · 모든 수치와 문장은 가상
-                  예시이며 실제 기업 공시가 아닙니다.
-                </>
-              ) : (
-                <>
-                  <strong>검수된 공시만 제공</strong> · 현재 실제 보고서 수집과
-                  검수를 준비하고 있습니다.
-                </>
-              )}
-            </span>
-            <button onClick={() => toggleDemo(!demo)}>
-              {demo ? "실제 공시 보기" : "가상 예시로 둘러보기"}
-              <ArrowRight size={15} />
-            </button>
-          </div>
+          {!excerptMode && (
+            <div className={"notice " + (demo ? "demo" : "")} role="status">
+              <Info size={18} />
+              <span>
+                {demo ? (
+                  <>
+                    <strong>기능 미리보기</strong> · 모든 수치와 문장은 가상
+                    예시이며 실제 기업 공시가 아닙니다.
+                  </>
+                ) : (
+                  <>
+                    <strong>자동 비교 검수 준비 중</strong> · 원문 발췌에서 실제
+                    사업보고서를 확인할 수 있습니다.
+                  </>
+                )}
+              </span>
+              <button onClick={() => toggleDemo(!demo)}>
+                {demo ? "실제 공시 보기" : "가상 예시로 둘러보기"}
+                <ArrowRight size={15} />
+              </button>
+            </div>
+          )}
           {error && (
             <div className="error" role="alert">
               {error}
               <button onClick={() => location.reload()}>다시 시도</button>
             </div>
           )}
-          {help ? (
+          {excerptMode ? (
+            <ExcerptLibrary
+              requestedCompany={selection.company}
+              onCompanyChange={setExcerptCompany}
+            />
+          ) : help ? (
             <section className="help panel">
               <h2>비교의 기준을 먼저 확인하세요</h2>
               <h3>분석 범위</h3>
@@ -424,6 +493,12 @@ export default function App() {
                   </p>
                   <button
                     className="button primary"
+                    onClick={() => navigateView("excerpts")}
+                  >
+                    실제 공시에서 발췌하기 <FileText size={16} />
+                  </button>
+                  <button
+                    className="button secondary"
                     onClick={() => toggleDemo(true)}
                   >
                     가상 예시로 기능 둘러보기 <ArrowRight size={16} />
@@ -786,13 +861,17 @@ export default function App() {
               공시렌즈 <span className="muted">/</span> 근거를 따라 읽는
               기업공시
             </span>
-            <a
-              href="https://opendart.fss.or.kr/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              데이터 제공 OpenDART <ExternalLink size={12} />
-            </a>
+            {excerptMode ? (
+              <span>원문 출처 · 기업 공식 IR</span>
+            ) : (
+              <a
+                href="https://opendart.fss.or.kr/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                데이터 제공 OpenDART <ExternalLink size={12} />
+              </a>
+            )}
           </footer>
         </main>
       </div>

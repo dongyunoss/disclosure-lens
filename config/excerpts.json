@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "samsung-2024",
+      "companyId": "samsung",
+      "companyName": "삼성전자",
+      "year": 2024,
+      "url": "https://images.samsung.com/kdp/ir/business-report/2024_4Q_Interim_Business_Report_vF_kr.pdf",
+      "listingUrl": "https://www.samsung.com/sec/ir/reports-disclosures/business-report/",
+      "coverPage": 4,
+      "paragraphPage": 28,
+      "paragraphStart": "SDC 및 Harman 산하",
+      "paragraphEnd": "글로벌 전자 기업입니다.",
+      "statementPage": 77,
+      "revenuePage": 77,
+      "profitPage": 77
+    },
+    {
+      "id": "samsung-2025",
+      "companyId": "samsung",
+      "companyName": "삼성전자",
+      "year": 2025,
+      "url": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf",
+      "listingUrl": "https://www.samsung.com/sec/ir/reports-disclosures/business-report/",
+      "coverPage": 4,
+      "paragraphPage": 33,
+      "paragraphStart": "SDC 및 Harman 산하",
+      "paragraphEnd": "글로벌 전자 기업입니다.",
+      "statementPage": 85,
+      "revenuePage": 85,
+      "profitPage": 85
+    },
+    {
+      "id": "lge-2024",
+      "companyId": "lge",
+      "companyName": "LG전자",
+      "year": 2024,
+      "url": "https://www.lge.co.kr/kr/upload/admin/investment/businessReport/2024_4Q_business_report.pdf.pdf",
+      "listingUrl": "https://www.lge.co.kr/company/investor/businessReport",
+      "coverPage": 5,
+      "paragraphPage": 26,
+      "paragraphStart": "각 사업은",
+      "paragraphEnd": "별도로 운영되고 있습니다.",
+      "statementPage": 67,
+      "revenuePage": 67,
+      "profitPage": 68
+    },
+    {
+      "id": "lge-2025",
+      "companyId": "lge",
+      "companyName": "LG전자",
+      "year": 2025,
+      "url": "https://www.lge.co.kr/kr/upload/admin/investment/businessReport/LGE_2025_business%20report.pdf",
+      "listingUrl": "https://www.lge.co.kr/company/investor/businessReport",
+      "coverPage": 5,
+      "paragraphPage": 28,
+      "paragraphStart": "각 사업은",
+      "paragraphEnd": "별도로 운영되고 있습니다.",
+      "statementPage": 71,
+      "revenuePage": 71,
+      "profitPage": 72
+    }
+  ]
+}

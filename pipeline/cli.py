@@ -32,6 +32,10 @@ def main():
                     if not dest.is_relative_to((ROOT/'public'/'data').resolve()):raise ValueError('잘못된 공개 데이터 경로')
                     data=load(dest);validate_public(data)
                     if data['companyId']!=company['id'] or data['id']!=pair['id'] or pair['mode']!='reviewed':raise ValueError('목록과 결과 정보가 다릅니다.')
+            excerpt_path=ROOT/'public'/'excerpts'/'library.json'
+            if excerpt_path.exists():
+                from .excerpts import validate_library
+                validate_library(load(excerpt_path))
             print('공개 데이터 검증 완료 (수집 전 목록은 빈 상태 유지)');return
         if args.command=='collect':
             from .dart import collect
