@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "samsung-2024",
+      "companyId": "samsung",
+      "companyName": "삼성전자",
+      "year": 2024,
+      "url": "https://images.samsung.com/kdp/ir/business-report/2024_4Q_Interim_Business_Report_vF_kr.pdf",
+      "listingUrl": "https://www.samsung.com/sec/ir/reports-disclosures/business-report/",
+      "filedAt": "2025-03-11",
+      "retrievedAt": "2026-09-11T19:06:57.282776+00:00",
+      "sha256": "4ca785fb4bbdb91887a7f216719bf0e28d075291c3101f8eae5461afce4c60c1",
+      "pageCount": 527,
+      "latestCorrectionVerified": false,
+      "excerpts": [
+        {
+          "id": "business",
+          "kind": "paragraph",
+          "title": "사업 개요 · 문장 발췌",
+          "section": "II. 사업의 내용 > 1. 사업의 개요",
+          "quote": "SDC 및 Harman 산하 종속기업 등 228개의 종속기업으로 구성\n된 글로벌 전자 기업입니다.",
+          "page": 28,
+          "printedPage": "25"
+        },
+        {
+          "id": "revenue",
+          "kind": "table",
+          "title": "매출액 · 원문 표 행",
+          "section": "III. 재무에 관한 사항 > 연결 손익계산서",
+          "quote": "매출액 (주29) 300,870,903 258,935,494 302,231,360",
+          "page": 77,
+          "printedPage": "74",
+          "values": [
+            "300,870,903",
+            "258,935,494",
+            "302,231,360"
+          ],
+          "headers": [
+            "2024",
+            "2023",
+            "2022"
+          ],
+          "unit": "백만원",
+          "basis": "연결",
+          "statementPage": 77
+        },
+        {
+          "id": "profit",
+          "kind": "table",
+          "title": "영업이익 · 원문 표 행",
+          "section": "III. 재무에 관한 사항 > 연결 손익계산서",
+          "quote": "영업이익 (주29) 32,725,961 6,566,976 43,376,630",
+          "page": 77,
+          "printedPage": "74",
+          "values": [
+            "32,725,961",
+            "6,566,976",
+            "43,376,630"
+          ],
+          "headers": [
+            "2024",
+            "2023",
+            "2022"
+          ],
+          "unit": "백만원",
+          "basis": "연결",
+          "statementPage": 77
+        }
+      ]
+    },
+    {
+      "id": "samsung-2025",
+      "companyId": "samsung",
+      "companyName": "삼성전자",
+      "year": 2025,
+      "url": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf",
+      "listingUrl": "https://www.samsung.com/sec/ir/reports-disclosures/business-report/",
+      "filedAt": "2026-03-10",
+      "retrievedAt": "2026-09-11T19:06:57.422901+00:00",
+      "sha256": "8ff8a4a975bd02776395d0f890839633bfede8bd4d7699b7a417183780cdfa0a",
+      "pageCount": 573,
+      "latestCorrectionVerified": false,
+      "excerpts": [
+        {
+          "id": "business",
+          "kind": "paragraph",
+          "title": "사업 개요 · 문장 발췌",
+          "section": "II. 사업의 내용 > 1. 사업의 개요",
+          "quote": "SDC 및 Harman 산하 종속기업 등 308개의 종속기업으로 구성\n된 글로벌 전자 기업입니다.",
+          "page": 33,
+          "printedPage": "30"
+        },
+        {
+          "id": "revenue",
+          "kind": "table",
+          "title": "매출액 · 원문 표 행",
+          "section": "III. 재무에 관한 사항 > 연결 손익계산서",
+          "quote": "매출액 (주30) 333,605,938 300,870,903 258,935,494",
+          "page": 85,
+          "printedPage": "82",
+          "values": [
+            "333,605,938",
+            "300,870,903",
+            "258,935,494"
+          ],
+          "headers": [
+            "2025",
+            "2024",
+            "2023"
+          ],
+          "unit": "백만원",
+          "basis": "연결",
+          "statementPage": 85
+        },
+        {
+          "id": "profit",
+          "kind": "table",
+          "title": "영업이익 · 원문 표 행",
+          "section": "III. 재무에 관한 사항 > 연결 손익계산서",
+          "quote": "영업이익 (주30) 43,601,051 32,725,961 6,566,976",
+          "page": 85,
+          "printedPage": "82",
+          "values": [
+            "43,601,051",
+            "32,725,961",
+            "6,566,976"
+          ],
+          "headers": [
+            "2025",
+            "2024",
+            "2023"
+          ],
+          "unit": "백만원",
+          "basis": "연결",
+          "statementPage": 85
+        }
+      ]
+    },
+    {
+      "id": "lge-2024",
+      "companyId": "lge",
+      "companyName": "LG전자",
+      "year": 2024,
+      "url": "https://www.lge.co.kr/kr/upload/admin/investment/businessReport/2024_4Q_business_report.pdf.pdf",
+      "listingUrl": "https://www.lge.co.kr/company/investor/businessReport",
+      "filedAt": "2025-03-17",
+      "retrievedAt": "2026-09-11T19:06:57.622866+00:00",
+      "sha256": "0bc8b52fea8ff72a560fd318c5c3654228635fa313f288f81089fcfe1652cc01",
+      "pageCount": 615,
+      "latestCorrectionVerified": false,
+      "excerpts": [
+        {
+          "id": "business",
+          "kind": "paragraph",
+          "title": "사업 개요 · 문장 발췌",
+          "section": "II. 사업의 내용 > 1. 사업의 개요",
+          "quote": "각 사업은 서로 다른 기술과 마케팅전략에 따라 별도로 운영되고 있습니다.",
+          "page": 26,
+          "printedPage": "22"
+        },
+        {
+          "id": "revenue",
+          "kind": "table",
+          "title": "매출액 · 원문 표 행",
+          "section": "III. 재무에 관한 사항 > 연결 손익계산서",
+          "quote": "매출액 87,728,182 82,262,664 82,521,459",
+          "page": 67,
+          "printedPage": "63",
+          "values": [
+            "87,728,182",
+            "82,262,664",
+            "82,521,459"
+          ],
+          "headers": [
+            "2024",
+            "2023",
+            "2022"
+          ],
+          "unit": "백만원",
+          "basis": "연결",
+          "statementPage": 67
+        },
+        {
+          "id": "profit",
+          "kind": "table",
+          "title": "영업이익 · 원문 표 행",
+          "section": "III. 재무에 관한 사항 > 연결 손익계산서",
+          "quote": "영업이익 3,419,675 3,653,294 3,567,327",
+          "page": 68,
+          "printedPage": "64",
+          "values": [
+            "3,419,675",
+            "3,653,294",
+            "3,567,327"
+          ],
+          "headers": [
+            "2024",
+            "2023",
+            "2022"
+          ],
+          "unit": "백만원",
+          "basis": "연결",
+          "statementPage": 67
+        }
+      ]
+    },
+    {
+      "id": "lge-2025",
+      "companyId": "lge",
+      "companyName": "LG전자",
+      "year": 2025,
+      "url": "https://www.lge.co.kr/kr/upload/admin/investment/businessReport/LGE_2025_business%20report.pdf",
+      "listingUrl": "https://www.lge.co.kr/company/investor/businessReport",
+      "filedAt": "2026-03-13",
+      "retrievedAt": "2026-09-11T19:06:57.817946+00:00",
+      "sha256": "316232c07d5876b70a282b99f278a533accfd70289a43d5ac6dd289e65d99e5a",
+      "pageCount": 683,
+      "latestCorrectionVerified": false,
+      "excerpts": [
+        {
+          "id": "business",
+          "kind": "paragraph",
+          "title": "사업 개요 · 문장 발췌",
+          "section": "II. 사업의 내용 > 1. 사업의 개요",
+          "quote": "각 사업은 서로 다른 기술과 마케팅전략에 따라 별도로 운영되고 있습니다.",
+          "page": 28,
+          "printedPage": "24"
+        },
+        {
+          "id": "revenue",
+          "kind": "table",
+          "title": "매출액 · 원문 표 행",
+          "section": "III. 재무에 관한 사항 > 연결 손익계산서",
+          "quote": "매출액 89,200,882 87,728,182 82,262,664",
+          "page": 71,
+          "printedPage": "67",
+          "values": [
+            "89,200,882",
+            "87,728,182",
+            "82,262,664"
+          ],
+          "headers": [
+            "2025",
+            "2024",
+            "2023"
+          ],
+          "unit": "백만원",
+          "basis": "연결",
+          "statementPage": 71
+        },
+        {
+          "id": "profit",
+          "kind": "table",
+          "title": "영업이익 · 원문 표 행",
+          "section": "III. 재무에 관한 사항 > 연결 손익계산서",
+          "quote": "영업이익 2,478,392 3,419,675 3,653,294",
+          "page": 72,
+          "printedPage": "68",
+          "values": [
+            "2,478,392",
+            "3,419,675",
+            "3,653,294"
+          ],
+          "headers": [
+            "2025",
+            "2024",
+            "2023"
+          ],
+          "unit": "백만원",
+          "basis": "연결",
+          "statementPage": 71
+        }
+      ]
+    }
+  ],
+  "unavailable": [
+    {
+      "companyId": "skhynix",
+      "companyName": "SK하이닉스",
+      "reason": "공식 사업보고서 PDF 연결 준비 중"
+    }
+  ]
+}
