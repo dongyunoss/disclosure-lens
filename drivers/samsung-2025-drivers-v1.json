@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "id": "samsung-2025-drivers-v1",
+  "companyId": "samsung",
+  "companyName": "삼성전자",
+  "title": "2025 사업보고서 · FCF와 매출 변화",
+  "status": "automatic",
+  "generatedAt": "2026-09-18T06:40:37.347693+00:00",
+  "periodBefore": "2024.01.01–2024.12.31",
+  "periodAfter": "2025.01.01–2025.12.31",
+  "basis": "연결",
+  "currency": "KRW",
+  "source": {
+    "title": "2025 사업보고서 (기업 공식 IR 게시본)",
+    "url": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf",
+    "sha256": "8ff8a4a975bd02776395d0f890839633bfede8bd4d7699b7a417183780cdfa0a",
+    "filedAt": "2026-03-10",
+    "checkedAt": "2026-09-11T19:06:57.422901+00:00",
+    "latestCorrectionVerified": false
+  },
+  "comparisonNote": "2025 보고서에 기재된 당기와 전기를 같은 기준으로 비교했습니다. 원래의 2024 보고서 수치와 다를 수 있습니다.",
+  "metrics": [
+    {
+      "id": "fcf",
+      "label": "잉여현금흐름 (FCF)",
+      "before": "19240982000000",
+      "after": "33161999000000",
+      "delta": "13921017000000",
+      "percent": "72.35",
+      "status": "증가",
+      "reason": null,
+      "definition": "FCF = 영업활동현금흐름 − 유형자산 취득 현금지출 − 무형자산 취득 현금지출",
+      "components": [
+        {
+          "label": "영업현금흐름 변화",
+          "before": "72982621000000",
+          "after": "85315148000000",
+          "delta": "12332527000000",
+          "impact": "12332527000000",
+          "evidence": [
+            "cfo"
+          ]
+        },
+        {
+          "label": "유형자산 취득 지출 변화",
+          "before": "51406355000000",
+          "after": "47522179000000",
+          "delta": "-3884176000000",
+          "impact": "3884176000000",
+          "evidence": [
+            "ppe"
+          ]
+        },
+        {
+          "label": "무형자산 취득 지출 변화",
+          "before": "2335284000000",
+          "after": "4630970000000",
+          "delta": "2295686000000",
+          "impact": "-2295686000000",
+          "evidence": [
+            "intangibles"
+          ]
+        }
+      ],
+      "residual": "0",
+      "caveat": "회사 발표 FCF와 정의가 다를 수 있습니다. 자산 처분·사업결합·비현금 취득은 차감하지 않습니다. 산술적 분해이며 지출 목적을 단정하지 않습니다."
+    },
+    {
+      "id": "revenue",
+      "label": "매출",
+      "before": "300870903000000",
+      "after": "333605938000000",
+      "delta": "32735035000000",
+      "percent": "10.88",
+      "status": "증가",
+      "reason": null,
+      "definition": "같은 기준의 지역별 매출 증감액을 전체 매출 증감액과 대조합니다.",
+      "components": [
+        {
+          "label": "국내",
+          "before": "39826088000000",
+          "after": "46641151000000",
+          "delta": "6815063000000",
+          "impact": "6815063000000",
+          "evidence": [
+            "region-before",
+            "region-after"
+          ],
+          "share": "20.8"
+        },
+        {
+          "label": "미주",
+          "before": "118828546000000",
+          "after": "133274793000000",
+          "delta": "14446247000000",
+          "impact": "14446247000000",
+          "evidence": [
+            "region-before",
+            "region-after"
+          ],
+          "share": "44.1"
+        },
+        {
+          "label": "유럽",
+          "before": "50118754000000",
+          "after": "53327193000000",
+          "delta": "3208439000000",
+          "impact": "3208439000000",
+          "evidence": [
+            "region-before",
+            "region-after"
+          ],
+          "share": "9.8"
+        },
+        {
+          "label": "아시아 및 아프리카",
+          "before": "48171377000000",
+          "after": "53047987000000",
+          "delta": "4876610000000",
+          "impact": "4876610000000",
+          "evidence": [
+            "region-before",
+            "region-after"
+          ],
+          "share": "14.9"
+        },
+        {
+          "label": "중국",
+          "before": "43926138000000",
+          "after": "47314814000000",
+          "delta": "3388676000000",
+          "impact": "3388676000000",
+          "evidence": [
+            "region-before",
+            "region-after"
+          ],
+          "share": "10.4"
+        }
+      ],
+      "residual": "0",
+      "evidence": [
+        "region-before",
+        "region-after"
+      ],
+      "caveat": "지역 매출과 수출액은 다릅니다. 가격·물량·환율·연결범위 영향은 별도 근거 없이는 구분할 수 없습니다. 지역별 분석과 제품별 분석은 서로 더하지 않습니다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "cfo",
+      "quote": "영업활동현금흐름 85,315,148 72,982,621 44,137,427",
+      "sourceUrl": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf#page=89",
+      "section": "연결 현금흐름표",
+      "page": 89,
+      "unit": "백만원",
+      "columns": [
+        "2025",
+        "2024",
+        "2023"
+      ]
+    },
+    {
+      "id": "ppe",
+      "quote": "유형자산의 취득 (47,522,179) (51,406,355) (57,611,292)",
+      "sourceUrl": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf#page=89",
+      "section": "연결 현금흐름표",
+      "page": 89,
+      "unit": "백만원",
+      "columns": [
+        "2025",
+        "2024",
+        "2023"
+      ]
+    },
+    {
+      "id": "intangibles",
+      "quote": "무형자산의 취득 (4,630,970) (2,335,284) (2,922,875)",
+      "sourceUrl": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf#page=89",
+      "section": "연결 현금흐름표",
+      "page": 89,
+      "unit": "백만원",
+      "columns": [
+        "2025",
+        "2024",
+        "2023"
+      ]
+    },
+    {
+      "id": "region-after",
+      "quote": "순매출액 46,641,151 133,274,793 53,327,193 53,047,987 47,314,814 333,605,938",
+      "sourceUrl": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf#page=185",
+      "section": "연결 주석 · 순매출액의 지역별 공시",
+      "page": 185,
+      "unit": "백만원",
+      "columns": [
+        "국내",
+        "미주",
+        "유럽",
+        "아시아 및 아프리카",
+        "중국",
+        "합계"
+      ]
+    },
+    {
+      "id": "region-before",
+      "quote": "순매출액 39,826,088 118,828,546 50,118,754 48,171,377 43,926,138 300,870,903",
+      "sourceUrl": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf#page=185",
+      "section": "연결 주석 · 순매출액의 지역별 공시",
+      "page": 185,
+      "unit": "백만원",
+      "columns": [
+        "국내",
+        "미주",
+        "유럽",
+        "아시아 및 아프리카",
+        "중국",
+        "합계"
+      ]
+    }
+  ],
+  "companyExplanations": [],
+  "limitations": [
+    "공식 IR 게시본의 최종 정정 여부는 미확인입니다.",
+    "설비투자 목적과 가격·물량·환율별 매출 변화 원인은 확인된 설명이 없어 보류했습니다."
+  ]
+}
