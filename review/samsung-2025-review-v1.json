@@ -1,0 +1,1073 @@
+{
+  "schemaVersion": 1,
+  "ruleVersion": "review-rules-1",
+  "id": "samsung-2025-review-v1",
+  "companyId": "samsung",
+  "companyName": "삼성전자",
+  "basis": "연결",
+  "currency": "KRW",
+  "periodType": "annual",
+  "beforeYear": 2024,
+  "afterYear": 2025,
+  "source": {
+    "title": "2025 사업보고서 (기업 공식 IR 게시본)",
+    "url": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf",
+    "sha256": "8ff8a4a975bd02776395d0f890839633bfede8bd4d7699b7a417183780cdfa0a",
+    "filedAt": "2026-03-10",
+    "checkedAt": "2026-09-11T19:06:57.422901+00:00",
+    "latestCorrectionVerified": false
+  },
+  "generatedAt": "2026-09-18T09:17:42.027482+00:00",
+  "facts": [
+    {
+      "id": "current_assets",
+      "label": "유동자산",
+      "after": "247684612000000",
+      "before": "227062266000000",
+      "tableId": "review-83",
+      "quote": "유동자산 247,684,612 227,062,266 195,936,557",
+      "kind": "instant",
+      "cashOutflow": false
+    },
+    {
+      "id": "cash",
+      "label": "현금및현금성자산",
+      "after": "57856378000000",
+      "before": "53705579000000",
+      "tableId": "review-83",
+      "quote": "현금및현금성자산 (주4,29) 57,856,378 53,705,579 69,080,893",
+      "kind": "instant",
+      "cashOutflow": false
+    },
+    {
+      "id": "short_investments",
+      "label": "단기금융상품",
+      "after": "67965021000000",
+      "before": "58909334000000",
+      "tableId": "review-83",
+      "quote": "단기금융상품 (주4,29) 67,965,021 58,909,334 22,690,924",
+      "kind": "instant",
+      "cashOutflow": false
+    },
+    {
+      "id": "receivables",
+      "label": "매출채권",
+      "after": "51127642000000",
+      "before": "43623073000000",
+      "tableId": "review-83",
+      "quote": "매출채권 (주4,5,7,29) 51,127,642 43,623,073 36,647,393",
+      "kind": "instant",
+      "cashOutflow": false
+    },
+    {
+      "id": "inventory",
+      "label": "재고자산",
+      "after": "52636828000000",
+      "before": "51754865000000",
+      "tableId": "review-83",
+      "quote": "재고자산 (주8) 52,636,828 51,754,865 51,625,874",
+      "kind": "instant",
+      "cashOutflow": false
+    },
+    {
+      "id": "intangible_assets",
+      "label": "무형자산",
+      "after": "29480565000000",
+      "before": "23738566000000",
+      "tableId": "review-83",
+      "quote": "무형자산 (주11) 29,480,565 23,738,566 22,741,862",
+      "kind": "instant",
+      "cashOutflow": false
+    },
+    {
+      "id": "assets",
+      "label": "자산총계",
+      "after": "566942110000000",
+      "before": "514531948000000",
+      "tableId": "review-83",
+      "quote": "자산총계 566,942,110 514,531,948 455,905,980",
+      "kind": "instant",
+      "cashOutflow": false
+    },
+    {
+      "id": "current_liabilities",
+      "label": "유동부채",
+      "after": "106411348000000",
+      "before": "93326299000000",
+      "tableId": "review-83",
+      "quote": "유동부채 106,411,348 93,326,299 75,719,452",
+      "kind": "instant",
+      "cashOutflow": false
+    },
+    {
+      "id": "short_debt",
+      "label": "단기차입금",
+      "after": "17574980000000",
+      "before": "13172504000000",
+      "tableId": "review-83",
+      "quote": "단기차입금 (주4,5,12,29) 17,574,980 13,172,504 7,114,601",
+      "kind": "instant",
+      "cashOutflow": false
+    },
+    {
+      "id": "current_debt",
+      "label": "유동성장기부채",
+      "after": "1177508000000",
+      "before": "2207290000000",
+      "tableId": "review-84",
+      "quote": "유동성장기부채 (주4,12,13,29) 1,177,508 2,207,290 1,308,875",
+      "kind": "instant",
+      "cashOutflow": false
+    },
+    {
+      "id": "long_debt",
+      "label": "장기차입금",
+      "after": "6479517000000",
+      "before": "3935860000000",
+      "tableId": "review-84",
+      "quote": "장기차입금 (주4,12,29) 6,479,517 3,935,860 3,724,850",
+      "kind": "instant",
+      "cashOutflow": false
+    },
+    {
+      "id": "revenue",
+      "label": "매출액",
+      "after": "333605938000000",
+      "before": "300870903000000",
+      "tableId": "review-85",
+      "quote": "매출액 (주30) 333,605,938 300,870,903 258,935,494",
+      "kind": "duration",
+      "cashOutflow": false
+    },
+    {
+      "id": "operating",
+      "label": "영업이익",
+      "after": "43601051000000",
+      "before": "32725961000000",
+      "tableId": "review-85",
+      "quote": "영업이익 (주30) 43,601,051 32,725,961 6,566,976",
+      "kind": "duration",
+      "cashOutflow": false
+    },
+    {
+      "id": "net_income",
+      "label": "당기순이익",
+      "after": "45206805000000",
+      "before": "34451351000000",
+      "tableId": "review-85",
+      "quote": "당기순이익 45,206,805 34,451,351 15,487,100",
+      "kind": "duration",
+      "cashOutflow": false
+    },
+    {
+      "id": "cfo",
+      "label": "영업활동현금흐름",
+      "after": "85315148000000",
+      "before": "72982621000000",
+      "tableId": "review-89",
+      "quote": "영업활동현금흐름 85,315,148 72,982,621 44,137,427",
+      "kind": "duration",
+      "cashOutflow": false
+    },
+    {
+      "id": "working_capital",
+      "label": "영업활동으로 인한 자산부채의 변동",
+      "after": "-9613906000000",
+      "before": "-1567557000000",
+      "tableId": "review-89",
+      "quote": "영업활동으로 인한 자산부채의 변동 (주27) (9,613,906) (1,567,557) (5,458,745)",
+      "kind": "duration",
+      "cashOutflow": false
+    },
+    {
+      "id": "ppe",
+      "label": "유형자산의 취득",
+      "after": "47522179000000",
+      "before": "51406355000000",
+      "tableId": "review-89",
+      "quote": "유형자산의 취득 (47,522,179) (51,406,355) (57,611,292)",
+      "kind": "duration",
+      "cashOutflow": true
+    },
+    {
+      "id": "intangibles",
+      "label": "무형자산의 취득",
+      "after": "4630970000000",
+      "before": "2335284000000",
+      "tableId": "review-89",
+      "quote": "무형자산의 취득 (4,630,970) (2,335,284) (2,922,875)",
+      "kind": "duration",
+      "cashOutflow": true
+    },
+    {
+      "id": "dividends",
+      "label": "배당금의 지급",
+      "after": "9897183000000",
+      "before": "10888749000000",
+      "tableId": "review-90",
+      "quote": "배당금의 지급 (9,897,183) (10,888,749) (9,864,474)",
+      "kind": "duration",
+      "cashOutflow": true
+    },
+    {
+      "id": "buybacks",
+      "label": "자기주식의 취득",
+      "after": "8189263000000",
+      "before": "1811775000000",
+      "tableId": "review-90",
+      "quote": "자기주식의 취득 (8,189,263) (1,811,775) 0",
+      "kind": "duration",
+      "cashOutflow": true
+    }
+  ],
+  "tables": [
+    {
+      "id": "review-83",
+      "metricId": "review-83",
+      "title": "연결 재무상태표",
+      "asset": "drivers/tables/samsung-2025-review-83-0f80fa33b19b.png",
+      "assetSha256": "0f80fa33b19b5ee1044b6fe3cde9395a8ea60ebce9e2d182f6faa12570babffa",
+      "sourceSha256": "8ff8a4a975bd02776395d0f890839633bfede8bd4d7699b7a417183780cdfa0a",
+      "sourceUrl": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf#page=83",
+      "page": 83,
+      "printedPage": 80,
+      "width": 1113,
+      "height": 1536,
+      "unit": "백만원",
+      "highlights": [
+        {
+          "partLabel": "유동자산",
+          "side": "after",
+          "rawValue": "247,684,612",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.4287425149700599,
+            "y": 0.1678726483357453,
+            "width": 0.18922155688622758,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "유동자산",
+          "side": "before",
+          "rawValue": "227,062,266",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.6179640718562874,
+            "y": 0.1678726483357453,
+            "width": 0.18802395209580836,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "현금및현금성자산",
+          "side": "after",
+          "rawValue": "57,856,378",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.4287425149700599,
+            "y": 0.1939218523878437,
+            "width": 0.18922155688622758,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "현금및현금성자산",
+          "side": "before",
+          "rawValue": "53,705,579",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.6179640718562874,
+            "y": 0.1939218523878437,
+            "width": 0.18802395209580836,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "단기금융상품",
+          "side": "after",
+          "rawValue": "67,965,021",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.4287425149700599,
+            "y": 0.2199710564399421,
+            "width": 0.18922155688622758,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "단기금융상품",
+          "side": "before",
+          "rawValue": "58,909,334",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.6179640718562874,
+            "y": 0.2199710564399421,
+            "width": 0.18802395209580836,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "매출채권",
+          "side": "after",
+          "rawValue": "51,127,642",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.4287425149700599,
+            "y": 0.32127351664254705,
+            "width": 0.18922155688622758,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "매출채권",
+          "side": "before",
+          "rawValue": "43,623,073",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.6179640718562874,
+            "y": 0.32127351664254705,
+            "width": 0.18802395209580836,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "재고자산",
+          "side": "after",
+          "rawValue": "52,636,828",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.4287425149700599,
+            "y": 0.3994211287988423,
+            "width": 0.18922155688622758,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "재고자산",
+          "side": "before",
+          "rawValue": "51,754,865",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.6179640718562874,
+            "y": 0.3994211287988423,
+            "width": 0.18802395209580836,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "무형자산",
+          "side": "after",
+          "rawValue": "29,480,565",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.4287425149700599,
+            "y": 0.6309696092619392,
+            "width": 0.18922155688622758,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "무형자산",
+          "side": "before",
+          "rawValue": "23,738,566",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.6179640718562874,
+            "y": 0.6309696092619392,
+            "width": 0.18802395209580836,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "자산총계",
+          "side": "after",
+          "rawValue": "566,942,110",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.4287425149700599,
+            "y": 0.7351664254703328,
+            "width": 0.18922155688622758,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "자산총계",
+          "side": "before",
+          "rawValue": "514,531,948",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.6179640718562874,
+            "y": 0.7351664254703328,
+            "width": 0.18802395209580836,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "유동부채",
+          "side": "after",
+          "rawValue": "106,411,348",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.4287425149700599,
+            "y": 0.7872648335745297,
+            "width": 0.18922155688622758,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "유동부채",
+          "side": "before",
+          "rawValue": "93,326,299",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.6179640718562874,
+            "y": 0.7872648335745297,
+            "width": 0.18802395209580836,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "단기차입금",
+          "side": "after",
+          "rawValue": "17,574,980",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.4287425149700599,
+            "y": 0.8393632416787264,
+            "width": 0.18922155688622758,
+            "height": 0.02604920405209841
+          }
+        },
+        {
+          "partLabel": "단기차입금",
+          "side": "before",
+          "rawValue": "13,172,504",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.6179640718562874,
+            "y": 0.8393632416787264,
+            "width": 0.18802395209580836,
+            "height": 0.02604920405209841
+          }
+        }
+      ]
+    },
+    {
+      "id": "review-84",
+      "metricId": "review-84",
+      "title": "연결 재무상태표 (계속)",
+      "asset": "drivers/tables/samsung-2025-review-84-1de6e5620046.png",
+      "assetSha256": "1de6e56200466d832577f6f4fabf2b0b65d7232c34662bb4698a832b204ee6fe",
+      "sourceSha256": "8ff8a4a975bd02776395d0f890839633bfede8bd4d7699b7a417183780cdfa0a",
+      "sourceUrl": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf#page=84",
+      "page": 84,
+      "printedPage": 81,
+      "width": 1113,
+      "height": 973,
+      "unit": "백만원",
+      "highlights": [
+        {
+          "partLabel": "유동성장기부채",
+          "side": "after",
+          "rawValue": "1,177,508",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.4287425149700599,
+            "y": 0.00684931506849315,
+            "width": 0.1892215568862277,
+            "height": 0.0410958904109589
+          }
+        },
+        {
+          "partLabel": "유동성장기부채",
+          "side": "before",
+          "rawValue": "2,207,290",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.6179640718562875,
+            "y": 0.00684931506849315,
+            "width": 0.18802395209580824,
+            "height": 0.0410958904109589
+          }
+        },
+        {
+          "partLabel": "장기차입금",
+          "side": "after",
+          "rawValue": "6,479,517",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.4287425149700599,
+            "y": 0.2534246575342466,
+            "width": 0.1892215568862277,
+            "height": 0.0410958904109589
+          }
+        },
+        {
+          "partLabel": "장기차입금",
+          "side": "before",
+          "rawValue": "3,935,860",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.6179640718562875,
+            "y": 0.2534246575342466,
+            "width": 0.18802395209580824,
+            "height": 0.0410958904109589
+          }
+        }
+      ]
+    },
+    {
+      "id": "review-85",
+      "metricId": "review-85",
+      "title": "연결 손익계산서",
+      "asset": "drivers/tables/samsung-2025-review-85-fad027c1bd04.png",
+      "assetSha256": "fad027c1bd04df6d173b7f2e5f2fccb94bac3348486eb01a606090a3d8729980",
+      "sourceSha256": "8ff8a4a975bd02776395d0f890839633bfede8bd4d7699b7a417183780cdfa0a",
+      "sourceUrl": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf#page=85",
+      "page": 85,
+      "printedPage": 82,
+      "width": 1113,
+      "height": 1027,
+      "unit": "백만원",
+      "highlights": [
+        {
+          "partLabel": "매출액",
+          "side": "after",
+          "rawValue": "333,605,938",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.324191616766467,
+            "y": 0.21212121212121213,
+            "width": 0.22375249500998004,
+            "height": 0.04112554112554113
+          }
+        },
+        {
+          "partLabel": "매출액",
+          "side": "before",
+          "rawValue": "300,870,903",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.5479441117764471,
+            "y": 0.21212121212121213,
+            "width": 0.22376247504990024,
+            "height": 0.04112554112554113
+          }
+        },
+        {
+          "partLabel": "영업이익",
+          "side": "after",
+          "rawValue": "43,601,051",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.324191616766467,
+            "y": 0.37662337662337664,
+            "width": 0.22375249500998004,
+            "height": 0.04112554112554113
+          }
+        },
+        {
+          "partLabel": "영업이익",
+          "side": "before",
+          "rawValue": "32,725,961",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.5479441117764471,
+            "y": 0.37662337662337664,
+            "width": 0.22376247504990024,
+            "height": 0.04112554112554113
+          }
+        },
+        {
+          "partLabel": "당기순이익",
+          "side": "after",
+          "rawValue": "45,206,805",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.324191616766467,
+            "y": 0.7056277056277056,
+            "width": 0.22375249500998004,
+            "height": 0.04112554112554113
+          }
+        },
+        {
+          "partLabel": "당기순이익",
+          "side": "before",
+          "rawValue": "34,451,351",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.5479441117764471,
+            "y": 0.7056277056277056,
+            "width": 0.22376247504990024,
+            "height": 0.04112554112554113
+          }
+        }
+      ]
+    },
+    {
+      "id": "review-89",
+      "metricId": "review-89",
+      "title": "연결 현금흐름표",
+      "asset": "drivers/tables/samsung-2025-review-89-0bbf22a47e81.png",
+      "assetSha256": "0bbf22a47e8139965977d127aa45d3ed41ddced62fb3e1c2b80c47c025eebddd",
+      "sourceSha256": "8ff8a4a975bd02776395d0f890839633bfede8bd4d7699b7a417183780cdfa0a",
+      "sourceUrl": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf#page=89",
+      "page": 89,
+      "printedPage": 86,
+      "width": 1113,
+      "height": 1583,
+      "unit": "백만원",
+      "highlights": [
+        {
+          "partLabel": "영업활동현금흐름",
+          "side": "after",
+          "rawValue": "85,315,148",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.479880239520958,
+            "y": 0.13623595505617977,
+            "width": 0.17221556886227563,
+            "height": 0.025280898876404494
+          }
+        },
+        {
+          "partLabel": "영업활동현금흐름",
+          "side": "before",
+          "rawValue": "72,982,621",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.6520958083832337,
+            "y": 0.13623595505617977,
+            "width": 0.1709580838323354,
+            "height": 0.025280898876404494
+          }
+        },
+        {
+          "partLabel": "영업활동으로 인한 자산부채의 변동",
+          "side": "after",
+          "rawValue": "(9,613,906)",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.479880239520958,
+            "y": 0.23735955056179775,
+            "width": 0.17221556886227563,
+            "height": 0.025280898876404494
+          }
+        },
+        {
+          "partLabel": "영업활동으로 인한 자산부채의 변동",
+          "side": "before",
+          "rawValue": "(1,567,557)",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.6520958083832337,
+            "y": 0.23735955056179775,
+            "width": 0.1709580838323354,
+            "height": 0.025280898876404494
+          }
+        },
+        {
+          "partLabel": "유형자산의 취득",
+          "side": "after",
+          "rawValue": "(47,522,179)",
+          "cashOutflow": true,
+          "rect": {
+            "x": 0.479880239520958,
+            "y": 0.6924157303370787,
+            "width": 0.17221556886227563,
+            "height": 0.025280898876404494
+          }
+        },
+        {
+          "partLabel": "유형자산의 취득",
+          "side": "before",
+          "rawValue": "(51,406,355)",
+          "cashOutflow": true,
+          "rect": {
+            "x": 0.6520958083832337,
+            "y": 0.6924157303370787,
+            "width": 0.1709580838323354,
+            "height": 0.025280898876404494
+          }
+        },
+        {
+          "partLabel": "무형자산의 취득",
+          "side": "after",
+          "rawValue": "(4,630,970)",
+          "cashOutflow": true,
+          "rect": {
+            "x": 0.479880239520958,
+            "y": 0.7429775280898876,
+            "width": 0.17221556886227563,
+            "height": 0.025280898876404494
+          }
+        },
+        {
+          "partLabel": "무형자산의 취득",
+          "side": "before",
+          "rawValue": "(2,335,284)",
+          "cashOutflow": true,
+          "rect": {
+            "x": 0.6520958083832337,
+            "y": 0.7429775280898876,
+            "width": 0.1709580838323354,
+            "height": 0.025280898876404494
+          }
+        }
+      ]
+    },
+    {
+      "id": "review-90",
+      "metricId": "review-90",
+      "title": "연결 현금흐름표 (계속)",
+      "asset": "drivers/tables/samsung-2025-review-90-dd6e1e14bf8a.png",
+      "assetSha256": "dd6e1e14bf8ac2def18dc9c33d49df86b2782f78684fac2f5b81546d51911a3d",
+      "sourceSha256": "8ff8a4a975bd02776395d0f890839633bfede8bd4d7699b7a417183780cdfa0a",
+      "sourceUrl": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf#page=90",
+      "page": 90,
+      "printedPage": 87,
+      "width": 1113,
+      "height": 333,
+      "unit": "백만원",
+      "highlights": [
+        {
+          "partLabel": "배당금의 지급",
+          "side": "after",
+          "rawValue": "(9,897,183)",
+          "cashOutflow": true,
+          "rect": {
+            "x": 0.479880239520958,
+            "y": 0.02,
+            "width": 0.17221556886227563,
+            "height": 0.12
+          }
+        },
+        {
+          "partLabel": "배당금의 지급",
+          "side": "before",
+          "rawValue": "(10,888,749)",
+          "cashOutflow": true,
+          "rect": {
+            "x": 0.6520958083832337,
+            "y": 0.02,
+            "width": 0.1709580838323353,
+            "height": 0.12
+          }
+        },
+        {
+          "partLabel": "자기주식의 취득",
+          "side": "after",
+          "rawValue": "(8,189,263)",
+          "cashOutflow": true,
+          "rect": {
+            "x": 0.479880239520958,
+            "y": 0.14,
+            "width": 0.17221556886227563,
+            "height": 0.12
+          }
+        },
+        {
+          "partLabel": "자기주식의 취득",
+          "side": "before",
+          "rawValue": "(1,811,775)",
+          "cashOutflow": true,
+          "rect": {
+            "x": 0.6520958083832337,
+            "y": 0.14,
+            "width": 0.1709580838323353,
+            "height": 0.12
+          }
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "margin",
+      "category": "수익성",
+      "title": "매출 증가가 이익률 개선으로 이어졌는가",
+      "factIds": [
+        "revenue",
+        "operating"
+      ],
+      "criterion": "영업이익 ÷ 매출 × 100. 영업이익이 0 이하이거나 전년 대비 2%p 이상 하락하면 확인 우선. 그 외 2%p 이상 상승은 주요 변화.",
+      "why": "외형 성장과 이익을 남기는 능력을 함께 보면 성장의 질을 검토할 수 있습니다.",
+      "nextCheck": "제품·사업부 구성, 가격·물량, 원가율과 일회성 비용을 주석·사업부 설명에서 확인하세요.",
+      "caveat": "이익률 상승만으로 지속 가능한 성장을 단정할 수 없습니다. 업종 평균은 반영하지 않았습니다.",
+      "stats": [
+        {
+          "label": "이전 영업이익률",
+          "value": "10.88",
+          "unit": "%"
+        },
+        {
+          "label": "이후 영업이익률",
+          "value": "13.07",
+          "unit": "%"
+        },
+        {
+          "label": "영업이익률 변화",
+          "value": "2.19",
+          "unit": "%p"
+        }
+      ],
+      "status": "movement"
+    },
+    {
+      "id": "receivables",
+      "category": "운전자본",
+      "title": "매출채권이 매출보다 빠르게 늘었는가",
+      "factIds": [
+        "receivables",
+        "revenue"
+      ],
+      "criterion": "해당 자산 증가율 − 매출 증가율 ≥ 5%p이면 확인 우선.",
+      "why": "매출 성장보다 더 많은 자금이 영업 자산에 묶이는지 살펴보는 신호입니다.",
+      "nextCheck": "매출채권 연령·대손충당금·회수 조건을 확인하세요.",
+      "caveat": "기말 잔액과 연간 매출의 비교입니다. 회수 지연이나 과잉 재고의 확정 증거가 아니며 환율·인수 영향도 확인해야 합니다.",
+      "stats": [
+        {
+          "label": "매출채권 증감률",
+          "value": "17.20",
+          "unit": "%"
+        },
+        {
+          "label": "매출액 증감률",
+          "value": "10.88",
+          "unit": "%"
+        },
+        {
+          "label": "증가율 격차",
+          "value": "6.32",
+          "unit": "%p"
+        }
+      ],
+      "status": "attention"
+    },
+    {
+      "id": "inventory",
+      "category": "운전자본",
+      "title": "재고가 매출보다 빠르게 쌓였는가",
+      "factIds": [
+        "inventory",
+        "revenue"
+      ],
+      "criterion": "해당 자산 증가율 − 매출 증가율 ≥ 5%p이면 확인 우선.",
+      "why": "매출 성장보다 더 많은 자금이 영업 자산에 묶이는지 살펴보는 신호입니다.",
+      "nextCheck": "재고 구성·평가손실·회전 기간·수요 전망을 확인하세요.",
+      "caveat": "기말 잔액과 연간 매출의 비교입니다. 회수 지연이나 과잉 재고의 확정 증거가 아니며 환율·인수 영향도 확인해야 합니다.",
+      "stats": [
+        {
+          "label": "재고자산 증감률",
+          "value": "1.70",
+          "unit": "%"
+        },
+        {
+          "label": "매출액 증감률",
+          "value": "10.88",
+          "unit": "%"
+        },
+        {
+          "label": "증가율 격차",
+          "value": "-9.18",
+          "unit": "%p"
+        }
+      ],
+      "status": "not_triggered"
+    },
+    {
+      "id": "cash-quality",
+      "category": "현금 창출",
+      "title": "회계상 이익이 영업현금으로 이어졌는가",
+      "factIds": [
+        "cfo",
+        "net_income"
+      ],
+      "criterion": "영업현금흐름이 음수이거나 영업현금흐름 ÷ 당기순이익 < 1배이면 확인 우선. 순이익이 0 이하이면 비율 판단은 보류.",
+      "why": "이익과 실제 현금 유입의 간격은 발생주의 항목과 운전자본을 살펴볼 출발점입니다.",
+      "nextCheck": "비현금 손익, 감가상각, 매출채권·재고·매입채무의 변동을 함께 확인하세요.",
+      "caveat": "1배 이상이어도 이익의 질이 보장되지는 않습니다. 설비 집약 업종에서는 감가상각 영향이 큽니다.",
+      "stats": [
+        {
+          "label": "이전 현금 / 이익",
+          "value": "2.12",
+          "unit": "배"
+        },
+        {
+          "label": "이후 현금 / 이익",
+          "value": "1.89",
+          "unit": "배"
+        }
+      ],
+      "status": "not_triggered"
+    },
+    {
+      "id": "working-capital",
+      "category": "현금 창출",
+      "title": "운전자본이 현금을 얼마나 흡수했는가",
+      "factIds": [
+        "working_capital",
+        "cfo"
+      ],
+      "criterion": "운전자본 현금효과의 악화액 ÷ 전기 영업현금흐름 ≥ 10%이면 확인 우선.",
+      "why": "영업현금흐름 총액이 늘어도 자산·부채 변동으로 추가 유출된 현금은 별도로 볼 필요가 있습니다.",
+      "nextCheck": "현금흐름 주석의 매출채권·재고·매입채무별 조정 내역에서 어떤 항목이 현금을 흡수했는지 확인하세요.",
+      "caveat": "합계의 악화 원인을 특정 자산 하나로 단정하지 않습니다. 재무상태표 증감과 현금효과는 일치하지 않을 수 있습니다.",
+      "stats": [
+        {
+          "label": "악화액 / 전기 영업현금",
+          "value": "11.03",
+          "unit": "%"
+        }
+      ],
+      "status": "attention"
+    },
+    {
+      "id": "liquidity",
+      "category": "재무 여력",
+      "title": "단기 지급 의무를 감당할 자산이 있는가",
+      "factIds": [
+        "current_assets",
+        "current_liabilities",
+        "cash",
+        "short_investments"
+      ],
+      "criterion": "유동자산 ÷ 유동부채 < 1배이면 확인 우선.",
+      "why": "단기 부채와 유동자산의 규모를 비교해 지급 여력 점검의 출발점으로 삼습니다.",
+      "nextCheck": "현금의 사용 제한, 금융상품 만기, 매출채권 회수 가능성과 차입금 만기를 확인하세요.",
+      "caveat": "유동자산 전부를 현금처럼 사용할 수 있는 것은 아닙니다. 단기금융상품도 사용 제한 여부를 확인해야 합니다.",
+      "stats": [
+        {
+          "label": "이전 유동비율",
+          "value": "2.43",
+          "unit": "배"
+        },
+        {
+          "label": "이후 유동비율",
+          "value": "2.33",
+          "unit": "배"
+        }
+      ],
+      "status": "not_triggered"
+    },
+    {
+      "id": "short-debt",
+      "category": "재무 여력",
+      "title": "단기차입금 증가의 용도와 만기는 무엇인가",
+      "factIds": [
+        "short_debt",
+        "cash",
+        "current_debt",
+        "long_debt"
+      ],
+      "criterion": "단기차입금 증가율 ≥ 20%이면 확인 우선.",
+      "why": "빠르게 늘어난 단기차입은 자금 조달 목적과 차환 계획을 확인할 이유가 됩니다.",
+      "nextCheck": "차입 통화·금리·만기와 신규 투자 또는 운전자본 수요를 확인하세요. 현금 보유액도 함께 읽으세요.",
+      "caveat": "차입금 증가 자체가 유동성 위기를 뜻하지 않습니다. 단기차입금은 유동성장기부채와 구분합니다.",
+      "stats": [
+        {
+          "label": "단기차입금 증감률",
+          "value": "33.42",
+          "unit": "%"
+        },
+        {
+          "label": "현금및현금성자산 증감률",
+          "value": "7.73",
+          "unit": "%"
+        }
+      ],
+      "status": "attention"
+    },
+    {
+      "id": "investment",
+      "category": "자본 배분",
+      "title": "영업현금으로 자산 취득 지출을 감당했는가",
+      "factIds": [
+        "cfo",
+        "ppe",
+        "intangibles"
+      ],
+      "criterion": "(유형자산 취득 지출 + 무형자산 취득 지출) ÷ 영업현금흐름 > 100%이면 확인 우선.",
+      "why": "영업현금의 어느 정도가 자산 취득에 쓰이는지 보면 추가 자금 조달 필요성을 검토할 수 있습니다.",
+      "nextCheck": "유지·성장 투자 비중, 투자 계획과 향후 현금 창출 시점을 확인하세요.",
+      "caveat": "취득 지출은 양의 규모로 계산합니다. 이 FCF 정의에는 기업 인수와 금융상품 투자를 포함하지 않습니다.",
+      "stats": [
+        {
+          "label": "취득 지출 / 영업현금",
+          "value": "61.13",
+          "unit": "%"
+        },
+        {
+          "label": "FCF",
+          "value": "331619.99",
+          "unit": "억 원"
+        }
+      ],
+      "status": "not_triggered"
+    },
+    {
+      "id": "intangible",
+      "category": "자본 배분",
+      "title": "무형자산 증가의 성격은 무엇인가",
+      "factIds": [
+        "intangible_assets",
+        "assets",
+        "intangibles"
+      ],
+      "criterion": "무형자산 장부금액 증가율 ≥ 20%이고 총자산 비중 ≥ 3%이면 주요 변화.",
+      "why": "무형자산이 커지면 자산의 구성과 회수 가능성을 함께 살펴볼 필요가 있습니다.",
+      "nextCheck": "영업권·개발비·취득 자산의 구성, 상각 기간과 손상검사 가정을 확인하세요.",
+      "caveat": "장부금액 증가는 현금 취득과 같지 않습니다. 인수·환율 등 비현금 변동도 포함될 수 있습니다.",
+      "stats": [
+        {
+          "label": "무형자산 증감률",
+          "value": "24.19",
+          "unit": "%"
+        },
+        {
+          "label": "총자산 중 비중",
+          "value": "5.20",
+          "unit": "%"
+        }
+      ],
+      "status": "movement"
+    },
+    {
+      "id": "payout",
+      "category": "자본 배분",
+      "title": "배당·자사주 지출과 현금 창출의 균형은 어떠한가",
+      "factIds": [
+        "dividends",
+        "buybacks",
+        "cfo",
+        "ppe",
+        "intangibles"
+      ],
+      "criterion": "배당·자사주 지출이 양수이고 FCF를 초과하면 확인 우선. 아니면 자사주 취득 증가율 ≥ 50%는 주요 변화.",
+      "why": "투자 후 남은 현금과 주주환원 지출을 비교하면 자본 배분 정책을 검토할 수 있습니다.",
+      "nextCheck": "주주환원 정책, 자기주식 소각·처분 계획과 향후 투자·차입 계획을 확인하세요.",
+      "caveat": "특정 연도 지출만으로 정책의 지속 가능성을 단정하지 않습니다. 자사주 취득과 소각은 다릅니다.",
+      "stats": [
+        {
+          "label": "배당·자사주 지출",
+          "value": "180864.46",
+          "unit": "억 원"
+        },
+        {
+          "label": "FCF",
+          "value": "331619.99",
+          "unit": "억 원"
+        }
+      ],
+      "status": "movement"
+    }
+  ],
+  "coverageGaps": [
+    "주석의 대손충당금·재고평가손실·손상차손 상세",
+    "차입금 만기·금리·약정 및 현금 사용 제한",
+    "우발채무·소송·특수관계자 거래",
+    "사업부·지역별 원인 설명과 일회성 손익",
+    "업종·경쟁사 비교, 주가·밸류에이션"
+  ]
+}

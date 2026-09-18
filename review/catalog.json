@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "samsung-2025-review-v1",
+      "companyId": "samsung",
+      "path": "review/samsung-2025-review-v1.json"
+    }
+  ]
+}
