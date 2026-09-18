@@ -55,6 +55,8 @@ def build(root):
         evidence=evidence,companyExplanations=[],
         limitations=['공식 IR 게시본의 최종 정정 여부는 미확인입니다.',
                      '설비투자 목적과 가격·물량·환율별 매출 변화 원인은 확인된 설명이 없어 보류했습니다.']))
+    from .table_overlays import attach
+    attach(root,analysis)
     save(root/'public/drivers/samsung-2025-drivers-v1.json',analysis)
     catalog_path=root/'public/drivers/catalog.json'
     catalog=load(catalog_path) if catalog_path.exists() else dict(schemaVersion=1,items=[])

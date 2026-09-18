@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import SourceTableViewer from "./SourceTableViewer";
 import {
   Activity,
   ArrowRight,
@@ -45,6 +46,10 @@ export default function DriversView({
   const currentCompany = companyId,
     setCurrentCompany = onCompanyChange;
   const [tick, setTick] = useState(Date.now());
+  const [partLabel, setPartLabel] = useState(
+    new URLSearchParams(location.search).get("part") || "",
+  );
+  const tableAnchor = useRef<HTMLDivElement>(null);
   useEffect(() => {
     let alive = true;
     async function refresh() {
@@ -97,6 +102,23 @@ export default function DriversView({
   }, [entry?.path]);
   const metric =
     analysis?.metrics.find((m) => m.id === metricId) || analysis?.metrics[0];
+  const sourceTable = analysis?.tableOverlays?.find(
+    (t) => t.metricId === metric?.id,
+  );
+  const selectedPart =
+    metric?.components.find((p) => p.label === partLabel) ||
+    (metric && dominantPart(metric)) ||
+    metric?.components[0];
+  function openPart(label: string) {
+    setPartLabel(label);
+    requestAnimationFrame(() => {
+      tableAnchor.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+      tableAnchor.current?.focus({ preventScroll: true });
+    });
+  }
   useEffect(() => {
     const u = new URL(location.href);
     u.searchParams.set("view", "drivers");
@@ -104,8 +126,17 @@ export default function DriversView({
     if (entry) u.searchParams.set("analysis", entry.id);
     else u.searchParams.delete("analysis");
     if (metric) u.searchParams.set("metric", metric.id);
+    if (sourceTable && selectedPart)
+      u.searchParams.set("part", selectedPart.label);
+    else u.searchParams.delete("part");
     history.replaceState(null, "", u);
-  }, [currentCompany, entry?.id, metric?.id]);
+  }, [
+    currentCompany,
+    entry?.id,
+    metric?.id,
+    sourceTable?.id,
+    selectedPart?.label,
+  ]);
   const mainPart = metric && dominantPart(metric);
   const maxImpact =
     metric?.components.reduce((max, p) => {
@@ -271,7 +302,19 @@ export default function DriversView({
                   abs = n < 0n ? -n : n,
                   width = Number((abs * 10000n) / maxImpact) / 100;
                 return (
-                  <div className="bridge-row" key={p.label}>
+                  <button
+                    type="button"
+                    className={
+                      "bridge-row bridge-source-button " +
+                      (sourceTable && selectedPart?.label === p.label
+                        ? "selected"
+                        : "")
+                    }
+                    key={p.label}
+                    aria-label={p.label + " 공시표에서 보기"}
+                    onClick={() => openPart(p.label)}
+                    disabled={!sourceTable}
+                  >
                     <div className="bridge-label">
                       <strong>{p.label}</strong>
                       <span>
@@ -288,7 +331,7 @@ export default function DriversView({
                       <strong>{signedEok(p.impact)}</strong>
                       {p.share != null && <small>전체 증감의 {p.share}%</small>}
                     </div>
-                  </div>
+                  </button>
                 );
               })}
             </div>
@@ -297,6 +340,21 @@ export default function DriversView({
               {metric.caveat}
             </p>
           </div>
+          {sourceTable && selectedPart && (
+            <div
+              className="driver-original-anchor"
+              ref={tableAnchor}
+              tabIndex={-1}
+            >
+              <SourceTableViewer
+                key={sourceTable.id}
+                table={sourceTable}
+                metric={metric}
+                selected={selectedPart}
+                onSelect={setPartLabel}
+              />
+            </div>
+          )}
           <div className="driver-evidence panel">
             <div className="section-heading">
               <h2>계산에 사용한 실제 근거</h2>

@@ -8,6 +8,16 @@ import {
 } from "./drivers";
 const data = () => structuredClone(raw) as DriverAnalysis;
 describe("financial driver analysis", () => {
+  it("rejects a mismatched original PDF cell", () => {
+    const d = data();
+    d.tableOverlays![0].highlights[0].rawValue = "1";
+    expect(() => validateDrivers(d)).toThrow();
+  });
+  it("rejects highlights outside the original table", () => {
+    const d = data();
+    d.tableOverlays![0].highlights[0].rect.x = 1;
+    expect(() => validateDrivers(d)).toThrow();
+  });
   it("validates actual PDF arithmetic without floating point", () => {
     const d = validateDrivers(data());
     expect(d.metrics[0].delta).toBe("13921017000000");

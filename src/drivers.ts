@@ -27,6 +27,27 @@ export type DriverMetric = {
   components: DriverPart[];
   evidence?: string[];
 };
+export type TableOverlay = {
+  id: string;
+  metricId: string;
+  title: string;
+  asset: string;
+  assetSha256: string;
+  sourceSha256: string;
+  sourceUrl: string;
+  page: number;
+  printedPage: number;
+  width: number;
+  height: number;
+  unit: string;
+  highlights: {
+    partLabel: string;
+    side: "before" | "after";
+    rawValue: string;
+    cashOutflow: boolean;
+    rect: { x: number; y: number; width: number; height: number };
+  }[];
+};
 export type DriverAnalysis = {
   schemaVersion: 1;
   id: string;
@@ -40,6 +61,7 @@ export type DriverAnalysis = {
   basis: string;
   currency: string;
   source: {
+    sha256: string;
     title: string;
     url: string;
     filedAt: string;
@@ -50,6 +72,7 @@ export type DriverAnalysis = {
   metrics: DriverMetric[];
   evidence: DriverEvidence[];
   limitations: string[];
+  tableOverlays?: TableOverlay[];
 };
 export type DriverCatalog = {
   schemaVersion: 1;
@@ -138,6 +161,53 @@ export function validateDrivers(data: DriverAnalysis): DriverAnalysis {
         )
           throw new Error("FCF 정의 검증 실패");
     }
+  }
+  for (const table of data.tableOverlays || []) {
+    safeSource(table.sourceUrl);
+    if (
+      table.unit !== "백만원" ||
+      table.sourceUrl !== data.source.url + "#page=" + table.page
+    )
+      throw new Error("원문 표 단위 또는 페이지 오류");
+    if (
+      !/^drivers\/tables\/[a-z0-9-]+\.png$/.test(table.asset) ||
+      table.sourceSha256 !== data.source.sha256 ||
+      table.width <= 0 ||
+      table.height <= 0
+    )
+      throw new Error("원본 표 연결 오류");
+    const metric = data.metrics.find((m) => m.id === table.metricId);
+    if (!metric) throw new Error("원본 표 지표 오류");
+    const seen = new Set<string>();
+    for (const mark of table.highlights) {
+      const p = metric.components.find((p) => p.label === mark.partLabel),
+        r = mark.rect,
+        key = mark.partLabel + mark.side;
+      if (
+        !p ||
+        !["before", "after"].includes(mark.side) ||
+        seen.has(key) ||
+        ![r.x, r.y, r.width, r.height].every(Number.isFinite) ||
+        r.x < 0 ||
+        r.y < 0 ||
+        r.width <= 0 ||
+        r.height <= 0 ||
+        r.x + r.width > 1.000001 ||
+        r.y + r.height > 1.000001
+      )
+        throw new Error("원문 셀 좌표 오류");
+      seen.add(key);
+      const raw = mark.rawValue
+        .replaceAll(",", "")
+        .replace(/^\((\d+)\)$/, "-$1");
+      if (!/^-?\d+$/.test(raw)) throw new Error("원문 셀 금액 오류");
+      let amount = BigInt(raw) * 1000000n;
+      if (mark.cashOutflow && amount < 0n) amount = -amount;
+      if (amount !== BigInt(p[mark.side]))
+        throw new Error("원문 셀과 분석 수치 불일치");
+    }
+    if (seen.size !== metric.components.length * 2)
+      throw new Error("원문 셀 위치 누락");
   }
   return data;
 }

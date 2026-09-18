@@ -44,6 +44,12 @@ def main():
                     if not dest.is_relative_to((ROOT/'public'/'drivers').resolve()):raise ValueError('잘못된 원인 분석 경로')
                     result=validate_analysis(load(dest))
                     if result['id']!=entry['id'] or result['companyId']!=entry['companyId']:raise ValueError('원인 분석 목록 불일치')
+                    from .table_overlays import validate_overlays
+                    from .core import digest
+                    validate_overlays(result)
+                    for table in result.get('tableOverlays',[]):
+                        image=(ROOT/'public'/table['asset']).resolve()
+                        if not image.is_relative_to((ROOT/'public/drivers/tables').resolve()) or digest(image.read_bytes())!=table['assetSha256']:raise ValueError('원본 표 이미지 검증 실패')
             print('공개 데이터 검증 완료 (수집 전 목록은 빈 상태 유지)');return
         if args.command=='collect':
             from .dart import collect

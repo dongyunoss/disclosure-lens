@@ -130,7 +130,7 @@ export default function App() {
     const u = new URL(location.href);
     u.searchParams.delete("source");
     u.searchParams.delete("excerpt");
-    for (const key of ["analysis", "metric", "company"])
+    for (const key of ["analysis", "metric", "company", "part"])
       u.searchParams.delete(key);
     if (view === "excerpts" || view === "drivers") {
       u.searchParams.set("view", view);

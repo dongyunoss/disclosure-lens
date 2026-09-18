@@ -24,7 +24,9 @@ test("actual FCF attribution, source evidence and revenue regions", async ({
       name: "미주가 증가에 가장 크게 기여했습니다.",
     }),
   ).toBeVisible();
-  await expect(page.getByText("유럽", { exact: true })).toBeVisible();
+  await expect(
+    page.locator(".driver-bridge").getByText("유럽", { exact: true }),
+  ).toBeVisible();
   await expect(page).toHaveURL(/metric=revenue/);
   await page.reload();
   await expect(
