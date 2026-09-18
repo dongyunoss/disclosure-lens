@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 test("actual filings stay unpublished until review", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/?view=compare");
   await expect(
     page.getByRole("heading", {
       name: "삼성전자의 비교 결과를 준비하고 있습니다",

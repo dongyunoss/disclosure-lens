@@ -14,11 +14,13 @@ export default function SourceTableViewer({
   metric,
   selected,
   onSelect,
+  review = false,
 }: {
   table: TableOverlay;
   metric: DriverMetric;
   selected: DriverPart;
   onSelect: (label: string) => void;
+  review?: boolean;
 }) {
   const [zoom, setZoom] = useState(100),
     [show, setShow] = useState(true),
@@ -101,8 +103,11 @@ export default function SourceTableViewer({
       <div className="table-annotation-note" role="status">
         <strong>{selected.label}</strong>
         <span>
-          {metric.id === "fcf" ? "FCF" : "매출"} 변화에{" "}
-          <b>{signedEok(selected.impact)}억 원</b> 기여
+          {review
+            ? "전년 대비 "
+            : (metric.id === "fcf" ? "FCF" : "매출") + " 변화에 "}
+          <b>{signedEok(review ? selected.delta : selected.impact)}억 원</b>
+          {review ? " 변화" : " 기여"}
         </span>
       </div>
       <div className="table-tools">

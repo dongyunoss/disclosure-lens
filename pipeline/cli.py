@@ -50,6 +50,14 @@ def main():
                     for table in result.get('tableOverlays',[]):
                         image=(ROOT/'public'/table['asset']).resolve()
                         if not image.is_relative_to((ROOT/'public/drivers/tables').resolve()) or digest(image.read_bytes())!=table['assetSha256']:raise ValueError('원본 표 이미지 검증 실패')
+            review_catalog=ROOT/'public/review/catalog.json'
+            if review_catalog.exists():
+                from .investment_review import validate_review
+                for entry in load(review_catalog)['items']:
+                    dest=(ROOT/'public'/entry['path']).resolve()
+                    if not dest.is_relative_to((ROOT/'public/review').resolve()):raise ValueError('검토 데이터 경로 오류')
+                    data=validate_review(load(dest),ROOT)
+                    if data['id']!=entry['id'] or data['companyId']!=entry['companyId']:raise ValueError('검토 목록 불일치')
             print('공개 데이터 검증 완료 (수집 전 목록은 빈 상태 유지)');return
         if args.command=='collect':
             from .dart import collect

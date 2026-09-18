@@ -19,6 +19,7 @@ import { useEvidenceTools } from "./webmcp";
 import { checkCatalog, checkComparison } from "./data";
 import ExcerptLibrary from "./ExcerptLibrary";
 import DriversView from "./DriversView";
+import ReviewView from "./ReviewView";
 import "./excerpts.css";
 
 const kinds: Record<Kind, string> = {
@@ -110,6 +111,13 @@ function Evidence({
   );
 }
 export default function App() {
+  const [reviewMode, setReviewMode] = useState(() => {
+    const q = new URLSearchParams(location.search);
+    return (
+      q.get("view") === "review" ||
+      (!q.has("view") && !q.has("demo") && !location.hash)
+    );
+  });
   const [driversCompany, setDriversCompany] = useState(
     new URLSearchParams(location.search).get("company") || "samsung",
   );
@@ -123,22 +131,33 @@ export default function App() {
   const [excerptMode, setExcerptMode] = useState(
     new URLSearchParams(location.search).get("view") === "excerpts",
   );
-  function navigateView(view: "compare" | "excerpts" | "help" | "drivers") {
+  function navigateView(
+    view: "compare" | "excerpts" | "help" | "drivers" | "review",
+  ) {
+    setReviewMode(view === "review");
     setDriversMode(view === "drivers");
     setExcerptMode(view === "excerpts");
     setHelp(view === "help");
     const u = new URL(location.href);
     u.searchParams.delete("source");
     u.searchParams.delete("excerpt");
-    for (const key of ["analysis", "metric", "company", "part"])
+    for (const key of [
+      "analysis",
+      "metric",
+      "company",
+      "part",
+      "review",
+      "finding",
+      "fact",
+    ])
       u.searchParams.delete(key);
-    if (view === "excerpts" || view === "drivers") {
+    if (view === "excerpts" || view === "drivers" || view === "review") {
       u.searchParams.set("view", view);
       u.searchParams.delete("demo");
       u.hash = "";
       setDemo(false);
       setSelection(decodeSelection(""));
-    } else u.searchParams.delete("view");
+    } else u.searchParams.set("view", view);
     history.replaceState(null, "", u);
   }
   const [catalog, setCatalog] = useState<Catalog | null>(null),
@@ -249,9 +268,17 @@ export default function App() {
         </a>
         <div className="side-caption">DISCLOSURE RESEARCH</div>
         <button
+          className={"nav-item " + (reviewMode ? "active" : "")}
+          onClick={() => navigateView("review")}
+        >
+          <ShieldCheck size={18} /> 투자 검토 포인트 <ArrowRight size={15} />
+        </button>
+        <button
           className={
             "nav-item " +
-            (!help && !excerptMode && !driversMode ? "active" : "")
+            (!help && !excerptMode && !driversMode && !reviewMode
+              ? "active"
+              : "")
           }
           onClick={() => navigateView("compare")}
         >
@@ -287,7 +314,7 @@ export default function App() {
             key={c.id}
             className={
               "company " +
-              ((driversMode
+              ((driversMode || reviewMode
                 ? driversCompany
                 : excerptMode
                   ? excerptCompany
@@ -296,7 +323,7 @@ export default function App() {
                 : "")
             }
             onClick={() => {
-              if (driversMode) {
+              if (driversMode || reviewMode) {
                 setDriversCompany(c.id);
                 return;
               }
@@ -311,7 +338,7 @@ export default function App() {
               {c.name}
               <small>{c.stockCode} · KOSPI</small>
             </span>
-            {(driversMode
+            {(driversMode || reviewMode
               ? driversCompany
               : excerptMode
                 ? excerptCompany
@@ -333,59 +360,73 @@ export default function App() {
           <span>
             리서치 워크스페이스 <span className="slash">/</span>{" "}
             <strong>
-              {driversMode
-                ? "수치 변화 원인"
-                : excerptMode
-                  ? "원문 발췌"
-                  : help
-                    ? "분석 기준"
-                    : "사업보고서 비교"}
+              {reviewMode
+                ? "투자 검토 포인트"
+                : driversMode
+                  ? "수치 변화 원인"
+                  : excerptMode
+                    ? "원문 발췌"
+                    : help
+                      ? "분석 기준"
+                      : "사업보고서 비교"}
             </strong>
           </span>
           <span className="top-note">
             <Layers3 size={15} />
-            {driversMode ? "공시 기반 원인 분석" : "2024 — 2025"}
+            {reviewMode
+              ? "재무제표 검토 · 실제 공시 근거"
+              : driversMode
+                ? "공시 기반 원인 분석"
+                : "2024 — 2025"}
           </span>
         </header>
         <main>
           <div className="page-heading">
             <div>
               <div className="eyebrow">
-                {driversMode
-                  ? "WHAT MOVED THE NUMBERS"
-                  : excerptMode
-                    ? "OFFICIAL FILING EXCERPTS"
-                    : "ANNUAL REPORT COMPARISON"}
+                {reviewMode
+                  ? "WHAT DESERVES YOUR ATTENTION"
+                  : driversMode
+                    ? "WHAT MOVED THE NUMBERS"
+                    : excerptMode
+                      ? "OFFICIAL FILING EXCERPTS"
+                      : "ANNUAL REPORT COMPARISON"}
               </div>
               <h1>
-                {driversMode
-                  ? "숫자 뒤의 이유를 확인하세요"
-                  : excerptMode
-                    ? "실제 공시에서 근거를 발췌하세요"
-                    : help
-                      ? "분석 기준 안내"
-                      : "무엇이 달라졌을까요?"}
+                {reviewMode
+                  ? "투자 전에, 무엇을 확인해야 할까요?"
+                  : driversMode
+                    ? "숫자 뒤의 이유를 확인하세요"
+                    : excerptMode
+                      ? "실제 공시에서 근거를 발췌하세요"
+                      : help
+                        ? "분석 기준 안내"
+                        : "무엇이 달라졌을까요?"}
               </h1>
               <p>
-                {driversMode
-                  ? "현금흐름과 매출 변화를 분해하고, 실제 공시 근거로 확인합니다."
-                  : excerptMode
-                    ? "사업 설명과 재무표를 선택하고, 출처와 함께 복사하세요."
-                    : "두 사업보고서의 변화와 그 근거를 함께 읽어보세요."}
+                {reviewMode
+                  ? "재무제표의 주요 변화를 찾아, 검토할 질문과 원문 표를 연결합니다."
+                  : driversMode
+                    ? "현금흐름과 매출 변화를 분해하고, 실제 공시 근거로 확인합니다."
+                    : excerptMode
+                      ? "사업 설명과 재무표를 선택하고, 출처와 함께 복사하세요."
+                      : "두 사업보고서의 변화와 그 근거를 함께 읽어보세요."}
               </p>
             </div>
             <button className="button secondary" onClick={share}>
               {copied ? <Check size={16} /> : <Link2 size={16} />}{" "}
               {copied
                 ? "주소를 복사했어요"
-                : driversMode
-                  ? "분석 링크 복사"
-                  : excerptMode
-                    ? "발췌 링크 복사"
-                    : "비교 링크 복사"}
+                : reviewMode
+                  ? "검토 링크 복사"
+                  : driversMode
+                    ? "분석 링크 복사"
+                    : excerptMode
+                      ? "발췌 링크 복사"
+                      : "비교 링크 복사"}
             </button>
           </div>
-          {!excerptMode && !driversMode && (
+          {!excerptMode && !driversMode && !reviewMode && (
             <div className={"notice " + (demo ? "demo" : "")} role="status">
               <Info size={18} />
               <span>
@@ -413,7 +454,12 @@ export default function App() {
               <button onClick={() => location.reload()}>다시 시도</button>
             </div>
           )}
-          {driversMode ? (
+          {reviewMode ? (
+            <ReviewView
+              companyId={driversCompany}
+              onCompanyChange={setDriversCompany}
+            />
+          ) : driversMode ? (
             <DriversView
               companyId={driversCompany}
               onCompanyChange={setDriversCompany}
@@ -905,7 +951,7 @@ export default function App() {
               공시렌즈 <span className="muted">/</span> 근거를 따라 읽는
               기업공시
             </span>
-            {excerptMode || driversMode ? (
+            {excerptMode || driversMode || reviewMode ? (
               <span>
                 {driversMode
                   ? "원문 출처 · 기업 IR / DART"
