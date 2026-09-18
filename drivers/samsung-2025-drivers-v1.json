@@ -222,5 +222,231 @@
   "limitations": [
     "공식 IR 게시본의 최종 정정 여부는 미확인입니다.",
     "설비투자 목적과 가격·물량·환율별 매출 변화 원인은 확인된 설명이 없어 보류했습니다."
+  ],
+  "tableOverlays": [
+    {
+      "id": "samsung-2025-fcf",
+      "metricId": "fcf",
+      "title": "연결 현금흐름표",
+      "asset": "drivers/tables/samsung-2025-fcf-92d61dc4e2ec.png",
+      "assetSha256": "92d61dc4e2ec7cf4a221cc81392e1b45aed1d9ddb67af9e35de981b936c343f1",
+      "width": 1113,
+      "height": 1311,
+      "sourceSha256": "8ff8a4a975bd02776395d0f890839633bfede8bd4d7699b7a417183780cdfa0a",
+      "sourceUrl": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf#page=89",
+      "page": 89,
+      "printedPage": 86,
+      "unit": "백만원",
+      "highlights": [
+        {
+          "partLabel": "영업현금흐름 변화",
+          "side": "before",
+          "rawValue": "72,982,621",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.6520958083832337,
+            "y": 0.23220338983050848,
+            "width": 0.1709580838323354,
+            "height": 0.030508474576271188
+          }
+        },
+        {
+          "partLabel": "영업현금흐름 변화",
+          "side": "after",
+          "rawValue": "85,315,148",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.479880239520958,
+            "y": 0.23220338983050848,
+            "width": 0.17221556886227563,
+            "height": 0.030508474576271188
+          }
+        },
+        {
+          "partLabel": "유형자산 취득 지출 변화",
+          "side": "before",
+          "rawValue": "(51,406,355)",
+          "cashOutflow": true,
+          "rect": {
+            "x": 0.6520958083832337,
+            "y": 0.9033898305084745,
+            "width": 0.1709580838323354,
+            "height": 0.030508474576271188
+          }
+        },
+        {
+          "partLabel": "유형자산 취득 지출 변화",
+          "side": "after",
+          "rawValue": "(47,522,179)",
+          "cashOutflow": true,
+          "rect": {
+            "x": 0.479880239520958,
+            "y": 0.9033898305084745,
+            "width": 0.17221556886227563,
+            "height": 0.030508474576271188
+          }
+        },
+        {
+          "partLabel": "무형자산 취득 지출 변화",
+          "side": "before",
+          "rawValue": "(2,335,284)",
+          "cashOutflow": true,
+          "rect": {
+            "x": 0.6520958083832337,
+            "y": 0.964406779661017,
+            "width": 0.1709580838323354,
+            "height": 0.030508474576271188
+          }
+        },
+        {
+          "partLabel": "무형자산 취득 지출 변화",
+          "side": "after",
+          "rawValue": "(4,630,970)",
+          "cashOutflow": true,
+          "rect": {
+            "x": 0.479880239520958,
+            "y": 0.964406779661017,
+            "width": 0.17221556886227563,
+            "height": 0.030508474576271188
+          }
+        }
+      ]
+    },
+    {
+      "id": "samsung-2025-revenue",
+      "metricId": "revenue",
+      "title": "연결 주석 · 순매출액의 지역별 공시",
+      "asset": "drivers/tables/samsung-2025-revenue-e4033cec6243.png",
+      "assetSha256": "e4033cec6243ebed46da4f8ddff20ca635dfa38c937b51cc5c4381c790621de7",
+      "width": 1113,
+      "height": 520,
+      "sourceSha256": "8ff8a4a975bd02776395d0f890839633bfede8bd4d7699b7a417183780cdfa0a",
+      "sourceUrl": "https://images.samsung.com/kdp/ir/business-report/2025_4Q_Interim_Business_Report_vF_kr.pdf#page=185",
+      "page": 185,
+      "printedPage": 182,
+      "unit": "백만원",
+      "highlights": [
+        {
+          "partLabel": "국내",
+          "side": "before",
+          "rawValue": "39,826,088",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.14712761976047903,
+            "y": 0.9145299145299145,
+            "width": 0.1411503697151152,
+            "height": 0.06837606837606838
+          }
+        },
+        {
+          "partLabel": "국내",
+          "side": "after",
+          "rawValue": "46,641,151",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.14712761976047903,
+            "y": 0.44871794871794873,
+            "width": 0.1411503697151152,
+            "height": 0.06837606837606838
+          }
+        },
+        {
+          "partLabel": "미주",
+          "side": "before",
+          "rawValue": "118,828,546",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.28827798947559424,
+            "y": 0.9145299145299145,
+            "width": 0.14114770459081838,
+            "height": 0.06837606837606838
+          }
+        },
+        {
+          "partLabel": "미주",
+          "side": "after",
+          "rawValue": "133,274,793",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.28827798947559424,
+            "y": 0.44871794871794873,
+            "width": 0.14114770459081838,
+            "height": 0.06837606837606838
+          }
+        },
+        {
+          "partLabel": "유럽",
+          "side": "before",
+          "rawValue": "50,118,754",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.4294256940664126,
+            "y": 0.9145299145299145,
+            "width": 0.14114716022500462,
+            "height": 0.06837606837606838
+          }
+        },
+        {
+          "partLabel": "유럽",
+          "side": "after",
+          "rawValue": "53,327,193",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.4294256940664126,
+            "y": 0.44871794871794873,
+            "width": 0.14114716022500462,
+            "height": 0.06837606837606838
+          }
+        },
+        {
+          "partLabel": "아시아 및 아프리카",
+          "side": "before",
+          "rawValue": "48,171,377",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.5705728542914172,
+            "y": 0.9145299145299145,
+            "width": 0.14114371257485023,
+            "height": 0.06837606837606838
+          }
+        },
+        {
+          "partLabel": "아시아 및 아프리카",
+          "side": "after",
+          "rawValue": "53,047,987",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.5705728542914172,
+            "y": 0.44871794871794873,
+            "width": 0.14114371257485023,
+            "height": 0.06837606837606838
+          }
+        },
+        {
+          "partLabel": "중국",
+          "side": "before",
+          "rawValue": "43,926,138",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.7117165668662675,
+            "y": 0.9145299145299145,
+            "width": 0.14115103127079182,
+            "height": 0.06837606837606838
+          }
+        },
+        {
+          "partLabel": "중국",
+          "side": "after",
+          "rawValue": "47,314,814",
+          "cashOutflow": false,
+          "rect": {
+            "x": 0.7117165668662675,
+            "y": 0.44871794871794873,
+            "width": 0.14115103127079182,
+            "height": 0.06837606837606838
+          }
+        }
+      ]
+    }
   ]
 }
