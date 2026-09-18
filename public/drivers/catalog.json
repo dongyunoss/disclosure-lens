@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "samsung-2025-drivers-v1",
+      "companyId": "samsung",
+      "companyName": "삼성전자",
+      "title": "2025 사업보고서 · FCF와 매출 변화",
+      "path": "drivers/samsung-2025-drivers-v1.json",
+      "status": "automatic"
+    }
+  ]
+}

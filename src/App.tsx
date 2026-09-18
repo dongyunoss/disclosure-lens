@@ -18,6 +18,7 @@ import { decodeSelection, selectionHash, signedEok, wonToEok } from "./format";
 import { useEvidenceTools } from "./webmcp";
 import { checkCatalog, checkComparison } from "./data";
 import ExcerptLibrary from "./ExcerptLibrary";
+import DriversView from "./DriversView";
 import "./excerpts.css";
 
 const kinds: Record<Kind, string> = {
@@ -109,6 +110,12 @@ function Evidence({
   );
 }
 export default function App() {
+  const [driversCompany, setDriversCompany] = useState(
+    new URLSearchParams(location.search).get("company") || "samsung",
+  );
+  const [driversMode, setDriversMode] = useState(
+    new URLSearchParams(location.search).get("view") === "drivers",
+  );
   const [excerptCompany, setExcerptCompany] = useState(
     new URLSearchParams(location.search).get("source")?.split("-")[0] ||
       "samsung",
@@ -116,14 +123,17 @@ export default function App() {
   const [excerptMode, setExcerptMode] = useState(
     new URLSearchParams(location.search).get("view") === "excerpts",
   );
-  function navigateView(view: "compare" | "excerpts" | "help") {
+  function navigateView(view: "compare" | "excerpts" | "help" | "drivers") {
+    setDriversMode(view === "drivers");
     setExcerptMode(view === "excerpts");
     setHelp(view === "help");
     const u = new URL(location.href);
     u.searchParams.delete("source");
     u.searchParams.delete("excerpt");
-    if (view === "excerpts") {
-      u.searchParams.set("view", "excerpts");
+    for (const key of ["analysis", "metric", "company"])
+      u.searchParams.delete(key);
+    if (view === "excerpts" || view === "drivers") {
+      u.searchParams.set("view", view);
       u.searchParams.delete("demo");
       u.hash = "";
       setDemo(false);
@@ -239,12 +249,21 @@ export default function App() {
         </a>
         <div className="side-caption">DISCLOSURE RESEARCH</div>
         <button
-          className={"nav-item " + (!help && !excerptMode ? "active" : "")}
+          className={
+            "nav-item " +
+            (!help && !excerptMode && !driversMode ? "active" : "")
+          }
           onClick={() => navigateView("compare")}
         >
           <Search size={18} />
           공시 비교
           <ArrowRight size={15} />
+        </button>
+        <button
+          className={"nav-item " + (driversMode ? "active" : "")}
+          onClick={() => navigateView("drivers")}
+        >
+          <Layers3 size={18} /> 수치 변화 원인
         </button>
         <button
           className={"nav-item " + (help && !excerptMode ? "active" : "")}
@@ -268,11 +287,19 @@ export default function App() {
             key={c.id}
             className={
               "company " +
-              ((excerptMode ? excerptCompany : company?.id) === c.id
+              ((driversMode
+                ? driversCompany
+                : excerptMode
+                  ? excerptCompany
+                  : company?.id) === c.id
                 ? "selected"
                 : "")
             }
             onClick={() => {
+              if (driversMode) {
+                setDriversCompany(c.id);
+                return;
+              }
               choose(c.id, c.comparisons[0]?.id);
               setHelp(false);
             }}
@@ -284,9 +311,11 @@ export default function App() {
               {c.name}
               <small>{c.stockCode} · KOSPI</small>
             </span>
-            {(excerptMode ? excerptCompany : company?.id) === c.id && (
-              <span className="selected-line" />
-            )}
+            {(driversMode
+              ? driversCompany
+              : excerptMode
+                ? excerptCompany
+                : company?.id) === c.id && <span className="selected-line" />}
           </button>
         ))}
         <div className="sidebar-bottom">
@@ -304,49 +333,59 @@ export default function App() {
           <span>
             리서치 워크스페이스 <span className="slash">/</span>{" "}
             <strong>
-              {excerptMode
-                ? "원문 발췌"
-                : help
-                  ? "분석 기준"
-                  : "사업보고서 비교"}
+              {driversMode
+                ? "수치 변화 원인"
+                : excerptMode
+                  ? "원문 발췌"
+                  : help
+                    ? "분석 기준"
+                    : "사업보고서 비교"}
             </strong>
           </span>
           <span className="top-note">
             <Layers3 size={15} />
-            2024 — 2025
+            {driversMode ? "공시 기반 원인 분석" : "2024 — 2025"}
           </span>
         </header>
         <main>
           <div className="page-heading">
             <div>
               <div className="eyebrow">
-                {excerptMode
-                  ? "OFFICIAL FILING EXCERPTS"
-                  : "ANNUAL REPORT COMPARISON"}
+                {driversMode
+                  ? "WHAT MOVED THE NUMBERS"
+                  : excerptMode
+                    ? "OFFICIAL FILING EXCERPTS"
+                    : "ANNUAL REPORT COMPARISON"}
               </div>
               <h1>
-                {excerptMode
-                  ? "실제 공시에서 근거를 발췌하세요"
-                  : help
-                    ? "분석 기준 안내"
-                    : "무엇이 달라졌을까요?"}
+                {driversMode
+                  ? "숫자 뒤의 이유를 확인하세요"
+                  : excerptMode
+                    ? "실제 공시에서 근거를 발췌하세요"
+                    : help
+                      ? "분석 기준 안내"
+                      : "무엇이 달라졌을까요?"}
               </h1>
               <p>
-                {excerptMode
-                  ? "사업 설명과 재무표를 선택하고, 출처와 함께 복사하세요."
-                  : "두 사업보고서의 변화와 그 근거를 함께 읽어보세요."}
+                {driversMode
+                  ? "현금흐름과 매출 변화를 분해하고, 실제 공시 근거로 확인합니다."
+                  : excerptMode
+                    ? "사업 설명과 재무표를 선택하고, 출처와 함께 복사하세요."
+                    : "두 사업보고서의 변화와 그 근거를 함께 읽어보세요."}
               </p>
             </div>
             <button className="button secondary" onClick={share}>
               {copied ? <Check size={16} /> : <Link2 size={16} />}{" "}
               {copied
                 ? "주소를 복사했어요"
-                : excerptMode
-                  ? "발췌 링크 복사"
-                  : "비교 링크 복사"}
+                : driversMode
+                  ? "분석 링크 복사"
+                  : excerptMode
+                    ? "발췌 링크 복사"
+                    : "비교 링크 복사"}
             </button>
           </div>
-          {!excerptMode && (
+          {!excerptMode && !driversMode && (
             <div className={"notice " + (demo ? "demo" : "")} role="status">
               <Info size={18} />
               <span>
@@ -374,7 +413,12 @@ export default function App() {
               <button onClick={() => location.reload()}>다시 시도</button>
             </div>
           )}
-          {excerptMode ? (
+          {driversMode ? (
+            <DriversView
+              companyId={driversCompany}
+              onCompanyChange={setDriversCompany}
+            />
+          ) : excerptMode ? (
             <ExcerptLibrary
               requestedCompany={selection.company}
               onCompanyChange={setExcerptCompany}
@@ -861,8 +905,12 @@ export default function App() {
               공시렌즈 <span className="muted">/</span> 근거를 따라 읽는
               기업공시
             </span>
-            {excerptMode ? (
-              <span>원문 출처 · 기업 공식 IR</span>
+            {excerptMode || driversMode ? (
+              <span>
+                {driversMode
+                  ? "원문 출처 · 기업 IR / DART"
+                  : "원문 출처 · 기업 공식 IR"}
+              </span>
             ) : (
               <a
                 href="https://opendart.fss.or.kr/"

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "state": "not_configured",
+  "checkedAt": null,
+  "intervalSeconds": 300,
+  "message": "공시 수집 인증키와 상시 실행 환경 연결 전입니다. 현재는 보관된 실제 보고서 분석을 제공합니다.",
+  "filings": []
+}

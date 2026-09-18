@@ -36,6 +36,14 @@ def main():
             if excerpt_path.exists():
                 from .excerpts import validate_library
                 validate_library(load(excerpt_path))
+            drivers_path=ROOT/'public'/'drivers'/'catalog.json'
+            if drivers_path.exists():
+                from .drivers import validate_analysis
+                for entry in load(drivers_path)['items']:
+                    dest=(ROOT/'public'/entry['path']).resolve()
+                    if not dest.is_relative_to((ROOT/'public'/'drivers').resolve()):raise ValueError('잘못된 원인 분석 경로')
+                    result=validate_analysis(load(dest))
+                    if result['id']!=entry['id'] or result['companyId']!=entry['companyId']:raise ValueError('원인 분석 목록 불일치')
             print('공개 데이터 검증 완료 (수집 전 목록은 빈 상태 유지)');return
         if args.command=='collect':
             from .dart import collect
